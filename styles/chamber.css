@@ -90,19 +90,19 @@ h1 a:hover { text-decoration: none; }
 
 
 .site-header {
-  background: var(--color-ink);
-  padding: 0.85rem var(--gutter);
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
+  align-items: center;
+  background: var(--color-ink);
+  padding: 0;
 }
 
 .site-header__brand {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-right: auto;
+  gap: .75rem;
+  padding: 1rem;
+  flex: 1;
 }
 
 .site-header__logo { border-radius: 8px; }
@@ -115,17 +115,7 @@ h1 a:hover { text-decoration: none; }
 }
 
 .menu-toggle {
-  display: inline-flex;
-  background: var(--color-ink-soft);
-  color: var(--color-surface);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
-  font-size: 1.1rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  margin: 1rem;
 }
 
 .site-nav a{
@@ -135,18 +125,33 @@ h1 a:hover { text-decoration: none; }
     padding: 0.6rem 1.1rem;
     width:100%
 }
-.nav a:hover {
+.site-nav a:hover {
     background: var(--color-ink-soft);
     color: var(--color-surface);
     border-radius: 8px;
 }
 
 .site-nav {
-  display: flex;
-  width: 100%;
-  order: 3;
+  display: none;
   flex-direction: column;
-  gap: 1rem;
+  width: 100%;
+  order: 999;
+}
+.site-nav__tab {
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+
+.site-nav__tab a {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: #2d2d2d;
+  color: white;
+}
+
+.site-nav__tab a:hover {
+  background: #444;
 }
 
 .site-nav--open { display: flex; }
@@ -343,25 +348,26 @@ main {
    Responsive breakpoints
    ========================================================================== */
 @media (min-width: 700px) {
-  .menu-toggle { display: none; }
-
-  .site-nav {
-    display: flex;
-    flex-direction: row;
-    width: auto;
-    order: 0;
-    gap: 0.25rem;
-  }
-
-  .site-nav__tab a { padding: 0.6rem 1.1rem; }
-
-  .about-grid {
-    grid-template-columns: 2fr 1fr;
-    align-items: center;
-  }
-
-  .course-list { grid-template-columns: repeat(2, 1fr); }
+.menu-toggle{
+  display:none;
 }
+.site-nav{
+  display:flex;
+  flex-direction:row;
+  width:100%;
+  order:999;
+}
+.site-nav__tab{
+  flex:1;
+  border:none;
+}
+.site-nav__tab a{
+  text-align:left;
+  padding:.75rem 1rem;
+}
+
+.course-list { grid-template-columns: repeat(2, 1fr); }
+
 
 @media (min-width: 960px) {
   .course-list {
