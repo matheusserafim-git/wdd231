@@ -159,10 +159,21 @@ h1 a:hover { text-decoration: none; }
 main {
   margin: 0 auto;
   padding: 1.75rem var(--gutter) 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "page"
+    "about"
+    "photo"
+    "courses";
+  gap: 2rem;
 }
 
 
-.page-heading { margin-bottom: 1.5rem; }
+.page-heading { 
+  margin-bottom: 1.5rem;
+  grid-area: page;
+}
 .page-heading h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); }
 
 
@@ -187,6 +198,18 @@ main {
   font-size: 1.15rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.about-section {
+  grid-area: about;
+}
+
+.photo-section {
+  grid-area: photo;
+}
+
+.courses-section {
+  grid-area: courses;
 }
 
 .photo-card {
@@ -246,7 +269,7 @@ main {
 
 .course-list {
   list-style: none;
-  margin: 0 0 1rem;
+  margin: 0 auto 1rem;
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
@@ -335,6 +358,14 @@ main {
 }
 
 @media (min-width: 700px) {
+
+main {
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "page page"
+    "about photo"
+    "courses courses";
+}
 .menu-toggle{
   display:none;
 }
@@ -353,7 +384,7 @@ main {
   padding:.75rem 1rem;
 }
 
-.about-grid{
+.about-section{
     grid-template-columns: 2fr 1fr;
 }
 .site-nav{
@@ -361,7 +392,7 @@ main {
     flex-direction:row;
     width:100%;
 }
-.site-nav__tab{
+.site-nav_tab{
     flex:1;
 }
 .site-nav__tab a{
@@ -378,6 +409,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.6rem;
+  
 }
 
   .site-footer {

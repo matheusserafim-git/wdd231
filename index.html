@@ -42,9 +42,13 @@
       <h1>Home</h1>
     </div>
 
-    <section class="about-grid" aria-labelledby="aboutHeading">
+    <section class="about-section" aria-labelledby="aboutHeading">
       <div class="about-card">
-        <h2 id="aboutHeading"><span class="eyebrow">// about-me</span>About Me</h2>
+        <h2 id="aboutHeading">
+          <span class="eyebrow">// about-me</span>
+          About Me
+        </h2>
+
         <p>
           Massa facilisis per purus si imperdiet curae amet, et fames lorem mi
           phasellus congue nascetur enim consectetur sociosqu natoque risus.
@@ -54,15 +58,21 @@
           fringilla.
         </p>
       </div>
+    </section>
+
+    <section class="photo-section" aria-labelledby="photoHeading">
       <figure class="photo-card">
-        <h2 class="visually-hidden">Student Photo</h2>
+        <h2 id="photoHeading" class="visually-hidden">Student Photo</h2>
         <p class="eyebrow eyebrow--on-dark">Student Photo</p>
         <img src="images/profilephoto.jpeg" alt="Portrait placeholder for Your Name" width="320" height="320">
       </figure>
     </section>
 
     <section class="courses-section" aria-labelledby="coursesHeading">
-      <h2 id="coursesHeading"><span class="eyebrow">// certificate-courses</span>Web Certificate Courses</h2>
+      <h2 id="coursesHeading">
+        <span class="eyebrow">// certificate-courses</span>
+        Web Certificate Courses
+      </h2>
 
       <div class="filter-row" role="group" aria-label="Filter courses by subject">
         <button class="filter-btn filter-btn--active" data-subject="All">All</button>
@@ -72,7 +82,9 @@
 
       <ul id="courseList" class="course-list"></ul>
 
-      <p class="credit-total">The total credits for the course(s) listed above is <span id="creditTotal">0</span></p>
+      <p class="credit-total">
+        The total credits for the course(s) listed above is 
+        <span id="creditTotal">0</span></p>
     </section>
   </main>
 
