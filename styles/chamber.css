@@ -185,14 +185,11 @@ main {
   margin-bottom: 2.5rem;
 }
 
-.about-card{
-  border-radius: var(--radius);
-  padding: 1.25rem 1.4rem;
-}
-
 .about-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
 }
 
 .about-card h2 {
