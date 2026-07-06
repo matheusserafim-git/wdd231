@@ -309,8 +309,8 @@ main {
 }
 
 .site-footer {
-  background:#e0e0e0;
-  color: #000;
+  background: var(--color-ink);
+  color: var(--color-surface);
   padding: 1.5rem var(--gutter);
   display: flex;
   flex-direction: column;
