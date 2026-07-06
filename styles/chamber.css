@@ -139,7 +139,6 @@ h1 a:hover { text-decoration: none; }
 }
 .site-nav__tab {
   width: 100%;
-  border-bottom: 1px solid #000;
 }
 
 .site-nav__tab a {
@@ -148,6 +147,7 @@ h1 a:hover { text-decoration: none; }
   padding: 1rem;
   background: #2d2d2d;
   color: white;
+  border-bottom: 1px solid #111;
 }
 
 .site-nav__tab a:hover {
@@ -161,17 +161,11 @@ main {
   padding: 1.75rem var(--gutter) 3rem;
 }
 
-.course-list {
-  max-width: 1000px;
-  margin: 0 auto;
-}
 
 .page-heading { margin-bottom: 1.5rem; }
 .page-heading h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); }
 
-/* ==========================================================================
-   About / photo section
-   ========================================================================== */
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -179,8 +173,7 @@ main {
   margin-bottom: 2.5rem;
 }
 
-.about-card,
-.photo-card {
+.about-card{
   border-radius: var(--radius);
   padding: 1.25rem 1.4rem;
 }
@@ -202,18 +195,17 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  border:1px solid #bbb;
 }
 
 .photo-card img {
   border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.15);
   width: 100%;
-  max-width: 280px;
+  max-width: 180px;
+  margin:auto;
 }
 
-/* ==========================================================================
-   Courses section
-   ========================================================================== */
 .courses-section h2 {
   font-size: 1.15rem;
   text-transform: uppercase;
@@ -259,6 +251,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.6rem;
+  max-width: 1000px;
 }
 
 .course-card {
@@ -315,12 +308,9 @@ main {
   font-weight: 600;
 }
 
-/* ==========================================================================
-   Footer
-   ========================================================================== */
 .site-footer {
-  background: var(--color-ink);
-  color: rgba(255,255,255,0.75);
+  background:#e0e0e0;
+  color: #000;
   padding: 1.5rem var(--gutter);
   display: flex;
   flex-direction: column;
@@ -344,9 +334,6 @@ main {
   color: rgba(255,255,255,0.55);
 }
 
-/* ==========================================================================
-   Responsive breakpoints
-   ========================================================================== */
 @media (min-width: 700px) {
 .menu-toggle{
   display:none;
@@ -366,13 +353,30 @@ main {
   padding:.75rem 1rem;
 }
 
+.about-grid{
+    grid-template-columns: 2fr 1fr;
+}
+.site-nav{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+}
+.site-nav__tab{
+    flex:1;
+}
+.site-nav__tab a{
+    text-align:left;
+}
+
+
 .course-list { grid-template-columns: repeat(2, 1fr); }
 
+}
 
 @media (min-width: 960px) {
   .course-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.6rem;
 }
 
