@@ -138,21 +138,22 @@ h1 a:hover { text-decoration: none; }
   width: 100%;
   order: 999;
 }
-.site-nav__tab {
+.site-nav_tab {
   width: 100%;
 }
 
-.site-nav__tab a {
-  display: block;
+.site-nav_tab a {
+  display: flex;
+  align-items: center;
   width: 100%;
   padding: 1rem;
-  background: #2d2d2d;
-  color: white;
+  background: white;
+  color: var(--color-ink);
   border-bottom: 1px solid #111;
 }
 
-.site-nav__tab a:hover {
-  background: #444;
+.site-nav_tab a:hover {
+  background: var(--color-ink-soft);
 }
 
 .site-nav--open { display: flex; }
