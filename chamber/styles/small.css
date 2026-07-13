@@ -91,7 +91,6 @@ h1 a:hover { text-decoration: none; }
 
 .site-header {
   display:flex;
-  flex-wrap:space-between;
   align-items:center;
   flex-wrap:wrap;
   padding: 0.5rem 1rem;
