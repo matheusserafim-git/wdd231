@@ -1,12 +1,23 @@
 @media (min-width: 700px) {
 
-main {
-  grid-template-columns: 2fr 1fr;
+.home-layout{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+  main {
+ 
   grid-template-areas:
     "page page"
     "about photo"
     "courses courses";
 }
+
+.home-layout .page-heading, 
+.home-layout .courses-section {
+    grid-column: 1 / -1;
+}
+
 .menu-toggle{
   display:none;
 }
@@ -44,7 +55,7 @@ main {
 @media (min-width: 960px) {
   .course-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.6rem;
   
 }

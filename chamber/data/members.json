@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Canoas Tech",
+    "phone": "(51) 3333-1111",
+    "website": "https://canoastech.com",
+    "image": "images/canoastech.webp",
+    "membership": 3,
+    "description": "Technology company."
+  },
+  {
+    "name": "Mercado Central",
+    "phone": "(51) 3333-2222",
+    "website": "https://mercadocentral.com",
+    "image": "images/centralmarket.webp",
+    "membership": 2,
+    "description": "Local grocery store."
+  },
+  {
+      "name": "Canoas Fitness",
+      "phone": "(51) 3333-3333",
+      "website": "https://canoasfitness.com",
+      "image": "images/canoasfitness.webp",
+      "membership": 1,
+      "description": "Fitness center."
+  },
+  {
+      "name": "Canoas Bakery",
+      "phone": "(51) 3333-4444",
+      "website": "https://canoasbakery.com",
+      "image": "images/canoasbakery.webp",
+      "membership": 2,
+      "description": "Bakery and cafe."
+  },
+  {
+      "name": "Canoas Auto Repair",
+      "phone": "(51) 3333-5555",
+      "website": "https://canoasautorepair.com",
+      "image": "images/canoasauto.webp",
+      "membership": 3,
+      "description": "Auto repair shop."
+  },
+    {
+        "name": "Canoas Bookstore",
+        "phone": "(51) 3333-6666",
+        "website": "https://canoasbookstore.com",
+        "image": "images/canoasbookstore.webp",
+        "membership": 1,
+        "description": "Local bookstore."
+    },
+    {
+        "name": "Canoas Coffee",
+        "phone": "(51) 3333-7777",
+        "website": "https://canoascoffee.com",
+        "image": "images/canoascoffee.webp",
+        "membership": 2,
+        "description": "Coffee shop."
+    },
+    {
+        "name": "Canoas Electronics",
+        "phone": "(51) 3333-8888",
+        "website": "https://canoaselectronics.com",
+        "image": "images/canoaselectronics.webp",
+        "membership": 3,
+        "description": "Electronics store."
+    }
+]

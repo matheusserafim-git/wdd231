@@ -89,13 +89,14 @@ h1 a { color: inherit; }
 h1 a:hover { text-decoration: none; }
 
 
+
 .site-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  background: var(--color-ink);
-  padding: 0;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  background:var(--color-ink);
 }
+
 
 .site-header__brand {
   display: flex;
@@ -108,10 +109,9 @@ h1 a:hover { text-decoration: none; }
 .site-header__logo { border-radius: 10px; }
 
 .site-header__name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: var(--color-surface);
-  font-size: 1.1rem;
+  color:#222;
+  font-family:var(--font-body);
+  font-weight:500;
 }
 
 .menu-toggle {
@@ -121,7 +121,7 @@ h1 a:hover { text-decoration: none; }
 
 .site-nav a{
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: space-between;
     padding: 0.6rem 1.1rem;
     width:100%
@@ -144,7 +144,7 @@ h1 a:hover { text-decoration: none; }
 
 .site-nav_tab a {
   display: flex;
-  align-items: center;
+  align-items: left;
   width: 100%;
   padding: 1rem;
   background: white;
@@ -158,17 +158,29 @@ h1 a:hover { text-decoration: none; }
 
 .site-nav--open { display: flex; }
 
-main {
-  margin: 0 auto;
-  padding: 1.75rem var(--gutter) 3rem;
-  display: grid;
+
+
+.directory-layout {
+  margin:auto;
+  max-width: 1200px;
+  padding: 1rem;
   grid-template-columns: 1fr;
-  grid-template-areas:
-    "page"
-    "about"
-    "photo"
-    "courses";
   gap: 2rem;
+}
+
+.home-layout {
+  margin:auto;
+  max-width: 1200px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-section,
+.photo-section,
+.courses-section {
+  grid-column: 1;
 }
 
 
@@ -354,4 +366,243 @@ main {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: rgba(255,255,255,0.55);
+}
+
+.directory-controls{
+
+    display:flex;
+    justify-content:center;
+    gap:1rem;
+    margin-bottom:2rem;
+
+}
+
+.view-btn{
+
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+
+    padding:.5rem 2rem;
+
+    border:1px solid #999;
+
+    border-radius:0px;
+
+    background:var(--color-surface);
+
+    border:1px solid var(--color-border);
+
+    cursor:pointer;
+
+    font-family:var(--font-display);
+    font-size:1rem;
+
+    transition:.25s;
+
+}
+
+.view-btn:hover{
+
+    background:var(--color-ink);
+    color:white;
+
+}
+
+.view-btn.active{
+
+    background:var(--color-accent);
+    color:black;
+
+}
+
+.directory{
+
+    display:grid;
+    gap:3rem;
+
+}
+
+.grid-view{
+
+  display:grid;
+  grid-template-columns:
+  repeat(3,1fr);
+  gap:1.5rem;
+
+}
+
+.member-card{
+
+    background:#ddd;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid var(--color-border);
+    transition:.25s;
+    display:flex;
+    flex-direction:column;
+    padding:1rem;
+
+}
+
+.member-card h2{
+
+  text-align:center;
+  font-size:1.3rem;
+  margin:0;
+
+}
+
+
+.tag{
+
+  text-align:center;
+  border-bottom:1px solid #b7d5e9;
+  margin-bottom:1rem;
+
+}
+
+.member-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.member-header{
+
+    padding:1.2rem;
+
+    text-align:center;
+
+    border-bottom:1px solid var(--color-border);
+
+}
+
+.member-header img{
+
+    width:90px;
+    height:90px;
+
+    object-fit:contain;
+
+    margin:auto auto 1rem;
+
+}
+
+.member-header h2{
+
+    margin:0;
+
+    font-size:1.2rem;
+
+}
+
+.member-header p{
+
+    margin:0;
+
+    color:var(--color-muted);
+
+}
+
+.member-info{
+
+    padding:1rem;
+
+    display:grid;
+    gap:.5rem;
+
+}
+
+.member-info span{
+
+    font-weight:bold;
+    color:var(--color-ink);
+
+}
+
+.member-info a{
+
+    color:var(--color-accent-2);
+
+}
+
+.list-view{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.list-view .member-card{
+
+    flex-direction:row;
+
+    align-items:center;
+
+    padding:1rem;
+
+}
+
+.card-content{
+
+  display:flex;
+  align-items:center;
+  gap:1rem;
+
+}
+
+
+.card-content img{
+
+  width:90px;
+  height:90px;
+  object-fit:contain;
+
+}
+
+.list-view .member-header{
+
+    border:none;
+
+    width:250px;
+
+}
+
+.list-view .member-header img{
+
+    width:70px;
+    height:70px;
+
+}
+
+
+@media(max-width:699px){
+
+.grid-view{
+
+grid-template-columns:1fr;
+
+}
+
+
+.card-content{
+
+display:flex;
+
+}
+
+
+.site-nav{
+
+display:none;
+
+}
+
+.site-nav.site-nav--open{
+  display:flex;
+
+}
 }
