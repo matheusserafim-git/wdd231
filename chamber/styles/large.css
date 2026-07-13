@@ -1,69 +1,153 @@
 @media (min-width: 700px) {
 
-.home-layout{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 1rem;               
+    padding: 1.5rem 2rem;
+  }
+
+  .site-header__brand {
+    flex: none;
+    justify-content: flex-start; 
+    padding: 0; 
+  }
+
+  .menu-toggle {
+    display: none; 
+  }
+
+  .site-nav {
+    display: flex !important; 
+    flex-direction: row;      
+    justify-content: flex-start; 
+    width: auto;
+    gap: 0.5rem;
+    background: transparent;
+    order: 0;
+  }
+
+  .site-nav_tab {
+    width: auto;
+    flex: none;
+  }
+
+  .site-nav_tab a {
+    display: inline-block;
+    background: transparent;
+    color: var(--color-surface);  
+    border-bottom: none;         
+    padding: 0.6rem 1.1rem;
+    border-radius: 4px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .site-nav_tab a:hover {
+    background: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  /* Grid Layout do Main (Home) */
+  .home-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
   main {
- 
-  grid-template-areas:
-    "page page"
-    "about photo"
-    "courses courses";
-}
+    grid-template-areas:
+      "page page"
+      "about photo"
+      "courses courses";
+  }
 
-.home-layout .page-heading, 
-.home-layout .courses-section {
+  .home-layout .page-heading, 
+  .home-layout .courses-section {
     grid-column: 1 / -1;
-}
+  }
 
-.menu-toggle{
-  display:none;
-}
-.site-nav{
-  display:flex;
-  flex-direction:row;
-  width:100%;
-  order:999;
-}
-.site-nav_tab{
-  flex:1;
-  border:none;
-}
-.site-nav_tab a{
-  text-align:center;
-  padding:.75rem 1rem;
-}
-
-.about-section{
+  .about-section {
     grid-template-columns: 2fr 1fr;
-}
-.site-nav{
-    display:flex;
-    flex-direction:row;
-    width:100%;
-}
-.site-nav_tab{
-    flex:1;
-}
+  }
 
-.course-list { grid-template-columns: repeat(2, 1fr); }
+  .course-list { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
 
+  /* ==========================================================================
+     ESTILOS DO FOOTER - IDÊNTICO AO TEMPLATE (3 colunas perfeitas no Desktop)
+     ========================================================================== */
+  .site-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .site-footer .footer-item {
+    flex: 1;
+    width: auto; 
+  }
+
+  /* Coluna 1: Informações da Câmara (Esquerda) */
+  .footer-item--contact {
+    text-align: left;
+  }
+
+  /* Coluna 2: Ícones das Redes Sociais (Centro) */
+  .footer-item--center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-item--social {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  /* Estilização circular dos ícones (como na imagem do template) */
+  .footer-item--social a {
+    background-color: var(--color-muted);
+    color: var(--color-ink);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .footer-item--social a:hover {
+    background-color: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  /* Coluna 3: Dados do Aluno, Copyright e Modificação (Direita) */
+  .footer-item--info {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+  }
+
+  .footer-item--modified {
+    text-align: right;
+    margin-top: 0.5rem;
+  }
 }
 
 @media (min-width: 960px) {
   .course-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.6rem;
-  
-}
-
-  .site-footer {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
   }
 }
 
