@@ -116,7 +116,16 @@ h1 a:hover { text-decoration: none; }
 
 .menu-toggle {
   margin: 1rem;
+    color: var(--color-surface); 
+    background: transparent;     
+    border: none;
+    font-size: 1.5rem;           
+    cursor: pointer;
+}
 
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+    color: var(--color-accent); 
 }
 
 .site-nav a{
@@ -139,9 +148,6 @@ h1 a:hover { text-decoration: none; }
   order: 999;
   background: var(--color-ink-soft);
 }
-.site-nav_tab {
-  width: 100%;
-}
 
 .site-nav_tab a {
   display: block;
@@ -153,13 +159,7 @@ h1 a:hover { text-decoration: none; }
   transition: background 0.2s;
 }
 
-.site-nav_tab a:hover {
-  background: var(--color-ink-soft);
-}
-
 .site-nav--open { display: flex; }
-
-
 
 .directory-layout {
   margin:auto;
@@ -212,17 +212,7 @@ h1 a:hover { text-decoration: none; }
   letter-spacing: 0.04em;
 }
 
-.about-section {
-  grid-area: about;
-}
 
-.photo-section {
-  grid-area: photo;
-}
-
-.courses-section {
-  grid-area: courses;
-}
 
 .photo-card {
   background: var(--color-ink);
@@ -313,8 +303,6 @@ h1 a:hover { text-decoration: none; }
   text-align: center;
 }
 
-.course-card--done .course-card__status { color: var(--color-accent-2); }
-
 .course-card__code {
   font-family: var(--font-mono);
   font-weight: 600;
@@ -367,7 +355,6 @@ h1 a:hover { text-decoration: none; }
   color: rgba(255,255,255,0.8);
   display: inline-flex; }
 
-.footer-item--social a:hover { color: var(--color-accent); }
 
 .footer-item--info p,
 .footer-item--modified p {
@@ -407,23 +394,21 @@ h1 a:hover { text-decoration: none; }
 
 .view-btn:hover{
 
-    background:var(--color-ink);
-    color:white;
+  background:var(--color-ink);
+  color:white;
 
 }
 
 .view-btn.active{
 
-    background:var(--color-accent);
-    color:black;
+  background:var(--color-accent);
+  color:black;
 
 }
 
 .directory{
-
-    display:grid;
-    gap:3rem;
-
+  display:grid;
+  gap:3rem;
 }
 
 .grid-view{
@@ -437,14 +422,14 @@ h1 a:hover { text-decoration: none; }
 
 .member-card{
 
-    background:#ddd;
-    border-radius:8px;
-    overflow:hidden;
-    border:1px solid var(--color-border);
-    transition:.25s;
-    display:flex;
-    flex-direction:column;
-    padding:1rem;
+  background:#ddd;
+  border-radius:8px;
+  overflow:hidden;
+  border:1px solid var(--color-border);
+  transition:.25s;
+  display:flex;
+  flex-direction:column;
+  padding:1rem;
 
 }
 
@@ -475,11 +460,9 @@ h1 a:hover { text-decoration: none; }
 
 .member-header{
 
-    padding:1.2rem;
-
-    text-align:center;
-
-    border-bottom:1px solid var(--color-border);
+  padding:1.2rem;
+  text-align:center;
+  border-bottom:1px solid var(--color-border);
 
 }
 
@@ -568,9 +551,8 @@ h1 a:hover { text-decoration: none; }
 
 .list-view .member-header{
 
-    border:none;
-
-    width:250px;
+  border:none;
+  width:250px;
 
 }
 
@@ -583,29 +565,19 @@ h1 a:hover { text-decoration: none; }
 
 
 @media(max-width:699px){
-
 .grid-view{
-
 grid-template-columns:1fr;
-
 }
-
 
 .card-content{
-
 display:flex;
-
 }
 
-
 .site-nav{
-
 display:none;
-
 }
 
 .site-nav.site-nav--open{
   display:flex;
-
 }
 }
