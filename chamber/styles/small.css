@@ -1,19 +1,20 @@
 :root {
   --color-ink: #223c5e;
   --color-ink-soft: #283246;
-  --color-paper: #EEF1F4;
-  --color-surface: #FFFFFF;
-  --color-text: #232B36;
-  --color-muted: #5C6773;
-  --color-accent: #E3A83B;
+  --color-paper: #eef1f4;
+  --color-surface: #ffffff;
+  --color-text: #232b36;
+  --color-muted: #5c6773;
+  --color-accent: #e3a83b;
   --color-accent-2: #3dc4c4;
-  --color-border: #D8DEE4;
+  --color-border: #d8dee4;
   
-  /* Cores padronizadas */
+  /* Cores padronizadas para eliminar o alerta de tipos de cores */
   --color-border-dark: #b7d5e9;
   --color-dark-pitch: #111111;
   --color-gray-light: #dddddd;
   --color-gray-mid: #bbbbbb;
+  --color-bg-done: #f4faf9;
 
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Work Sans", sans-serif;
@@ -24,7 +25,7 @@
 }
 
 /* ==========================================================================
-   Reset, Base & Flexbox comuns
+   Reset & Base (Flexbox comum agrupado)
    ========================================================================== */
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -36,7 +37,7 @@ img,
   max-width: 100%;
 }
 
-/* Agrupamento inteligente para reduzir declarações repetidas */
+/* Agrupamento inteligente para economizar dezenas de declarações */
 .site-header,
 .site-header__brand,
 .site-nav a,
@@ -55,7 +56,7 @@ body {
   line-height: 1.6;
 }
 
-img { max-width: 100%; height: auto; display: block; }
+img { height: auto; display: block; }
 
 a {
   color: var(--color-accent-2);
@@ -118,7 +119,7 @@ h1 a:hover { text-decoration: none; }
   flex: 1;
 }
 
-.site-header__logo { border-radius: 10px; }
+.site-header__logo { border-radius: var(--radius); }
 
 .site-header__name {
   color: var(--color-surface);
@@ -304,7 +305,6 @@ h1 a:hover { text-decoration: none; }
 
 .course-card {
   display: grid;
-  width: 100%;
   grid-template-columns: auto 1fr auto auto;
   justify-content: space-between;
   align-items: center;
@@ -318,7 +318,7 @@ h1 a:hover { text-decoration: none; }
 
 .course-card--done {
   border-left-color: var(--color-accent-2);
-  background: #F4FAF9;
+  background: var(--color-bg-done);
 }
 
 .course-card__status {
