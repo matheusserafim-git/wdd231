@@ -31,6 +31,16 @@ img,
   max-width: 100%;
 }
 
+.site-header,
+.site-header__brand,
+.site-nav a,
+.view-btn,
+.card-content,
+.list-view .member-card {
+  display: flex;
+  align-items: center;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -90,8 +100,6 @@ h1 a:hover { text-decoration: none; }
 
 
 .site-header {
-  display:flex;
-  align-items:center;
   flex-wrap:wrap;
   padding: 0.5rem 1rem;
   background:var(--color-ink);
@@ -99,8 +107,6 @@ h1 a:hover { text-decoration: none; }
 
 
 .site-header__brand {
-  display: flex;
-  align-items: center;
   gap: .75rem;
   padding: 1rem;
   flex: 1;
@@ -129,8 +135,6 @@ h1 a:hover { text-decoration: none; }
 }
 
 .site-nav a{
-    display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 0.6rem 1.1rem;
     width:100%
@@ -377,18 +381,15 @@ h1 a:hover { text-decoration: none; }
 }
 
 .view-btn{
-
-    display:flex;
-    align-items:center;
-    gap:.5rem;
-    padding:.5rem 2rem;
-    border-radius:0px;
-    background:var(--color-surface);
-    border:1px solid var(--color-border);
-    cursor:pointer;
-    font-family:var(--font-display);
-    font-size:1rem;
-    transition:.25s;
+  gap:.5rem;
+  padding:.5rem 2rem;
+  border-radius:0px;
+  background:var(--color-surface);
+  border:1px solid var(--color-border);
+  cursor:pointer;
+  font-family:var(--font-display);
+  font-size:1rem;
+  transition:.25s;
 
 }
 
@@ -523,21 +524,11 @@ h1 a:hover { text-decoration: none; }
 }
 
 .list-view .member-card{
-
-    flex-direction:row;
-
-    align-items:center;
-
-    padding:1rem;
-
+  padding:1rem;
 }
 
 .card-content{
-
-  display:flex;
-  align-items:center;
   gap:1rem;
-
 }
 
 
