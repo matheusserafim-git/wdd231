@@ -432,8 +432,8 @@ h1 a:hover { text-decoration: none; }
 }
 
 .member-header img {
-  width: 90px;
-  height: 90px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;
   margin: auto auto 1rem;
 }
@@ -470,6 +470,8 @@ h1 a:hover { text-decoration: none; }
 
 .list-view .member-card {
   padding: 1rem;
+  width: 50px;
+  height: 50px;
 }
 
 .card-content {
@@ -490,6 +492,101 @@ h1 a:hover { text-decoration: none; }
 .list-view .member-header img {
   width: 70px;
   height: 70px;
+}
+
+/* Card base do Spotlight */
+.spotlight-card {
+  border-top: 4px solid var(--color-border) !important; /* Borda de destaque no topo */
+}
+
+/* Se for Gold, ganha borda amarela/ouro */
+.spotlight-card--gold {
+  border-top-color: var(--color-accent) !important;
+}
+
+/* Se for Silver, ganha borda azul/prata */
+.spotlight-card--silver {
+  border-top-color: var(--color-accent-2) !important;
+}
+
+.spotlight-card .tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+  border: none;
+}
+
+.spotlight-card--gold .tag {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.spotlight-card--silver .tag {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-dark-pitch);
+  padding: 0.8rem 2rem;
+  border-radius: 50px; /* Bordas arredondadas estilo pílula ficam mais modernas */
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 14px rgba(227, 168, 59, 0.4); /* Brilho suave da cor do botão */
+  transition: all 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(227, 168, 59, 0.6);
+  background: #f0b84c; /* Um tom ligeiramente mais claro no hover */
+}
+
+.events-section, .weather-section, .spotlights-section {
+  background: var(--color-surface);
+  padding: 2rem; 
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito ao passar o mouse para torná-lo interativo */
+.events-section:hover, .weather-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+#forecast-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+#forecast-list li {
+  flex: 1;
+  background: var(--color-paper);
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+#forecast-list li strong {
+  display: block;
+  color: var(--color-ink);
+  margin-bottom: 0.25rem;
 }
 
 /* ==========================================================================
