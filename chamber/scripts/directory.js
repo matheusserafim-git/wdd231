@@ -34,7 +34,7 @@ function displayMembers(members) {
 
         <div class="card-content">
 
-        <img src="${member.image}" alt="${member.name}">
+        <img src="${member.image}" alt="${member.name}" width="150" height="150" loading="lazy">
 
         <div class="member-info">
 
