@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Come be a part of it </title>
+    <meta name="description" content="Welcome to the Canoas Chamber of Commerce. Connecting local businesses, driving growth, and building a stronger community.">
+    <meta name="author" content="Matheus Serafim">
+    <meta property="og:description" content="Connect with the best local companies and drive the development and growth of our beloved Canoas. Come be a part of it!">
+    <meta property="og:title" content="Join - Canoas Chamber of Commerce">
+    <meta property="og:image" content="https://matheusserafim-git.github.io/wdd231/chamber/images/chambercanoaspng.png">
+    <meta property="og:url" content="https://matheusserafim-git.github.io/wdd231/chamber/directory.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="images/favicon.ico" >
+
+    <link rel="stylesheet" href="styles/small.css" >
+    <link rel="stylesheet" href="styles/large.css" >
+    <script type="module" src="scripts/home.js"></script>
+    <script src="scripts/navigation.js" defer ></script>
+
+
+</head>
+<body>
+    <body>
+    <header class="site-header">
+        <div class="site-header__brand">
+            <img src="images/chambercanoas.svg" alt="site logo" class="site-header__logo" width="40" height="40">
+            <span class="site-header__name">Canoas Chamber of Commerce</span>
+        </div>
+        <button id="menuButton" class="menu-toggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation menu">☰</button>
+        <nav id="siteNav" class="site-nav">
+            <div class="site-nav_tab">  
+                <a href="index.html">Home</a>
+            </div>
+            <div class="site-nav_tab">
+                <a href="directory.html">Directory</a>
+            </div>
+            <div class="site-nav_tab">
+                <a href="final.html">Final Project</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTAINER PRINCIPAL PARA O LAYOUT -->
+    <main class="join-container">
+        
+        <!-- SEÇÃO DO FORMULÁRIO -->
+        <section class="form-section">
+            <h2>Chamber Membership Application</h2>
+            <form method="get" action="thankyou.html" class="membership-form">
+                
+                <label>First Name *
+                    <input type="text" name="fname" autocomplete="given-name" title="Enter your first name" required>
+                </label>
+
+                <label>Last Name *
+                    <input type="text" name="lname" autocomplete="family-name" title="Enter your last name" required>
+                </label>
+
+                <label>Organizational Title
+                    <input type="text" name="title" autocomplete="organization-title" title="Minimum 7 characters. Letters, hyphens, and spaces only." pattern="[A-Za-z\s\-]{7,}">
+                </label>
+
+                <label>Email Address *
+                    <input type="email" name="email" autocomplete="email" placeholder="example@domain.com" title="Enter a valid email address" required>
+                </label>
+
+                <label>Mobile Number *
+                    <input type="tel" name="phone" autocomplete="tel" title="Enter your mobile phone number" required>
+                </label>
+
+                <label>Business/Organization Name *
+                    <input type="text" name="organization" autocomplete="organization" title="Enter your company name" required>
+                </label>
+
+                <label>Membership Level *
+                    <select name="membership-level" required title="Select a membership level">
+                        <option value="" disabled selected>Select your level...</option>
+                        <option value="np">NP Membership (Non-Profit - No fee)</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="prata">Silver Membership</option>
+                        <option value="ouro">Gold Membership</option>
+                    </select>
+                </label>
+
+                <label>Business Description
+                    <textarea name="description" title="Brief description of your organization"></textarea>
+                </label>
+
+                <!-- CAMPO OCULTO DE TIMESTAMP -->
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <input type="submit" value="Join the Chamber">
+            </form>
+        </section>
+
+        <!-- SEÇÃO DOS CARTÕES DE ADESÃO -->
+        <section class="cards-section">
+            <h2>Membership Levels</h2>
+            <div class="membership-cards">
+                <!-- Cartão NP -->
+                <div class="membership-card np-card">
+                    <h3>NP Membership</h3>
+                    <p>For non-profit organizations.</p>
+                    <button class="modal-open-btn" onclick="document.getElementById('modal-np').showModal()">View Benefits</button>
+                </div>
+
+                <!-- Cartão Bronze -->
+                <div class="membership-card bronze-card">
+                    <h3>Bronze</h3>
+                    <p>Essential benefits for growth.</p>
+                    <button class="modal-open-btn" onclick="document.getElementById('modal-bronze').showModal()">View Benefits</button>
+                </div>
+
+                <!-- Cartão Prata -->
+                <div class="membership-card prata-card">
+                    <h3>Silver</h3>
+                    <p>Advanced advertising & events.</p>
+                    <button class="modal-open-btn" onclick="document.getElementById('modal-prata').showModal()">View Benefits</button>
+                </div>
+
+                <!-- Cartão Ouro -->
+                <div class="membership-card ouro-card">
+                    <h3>Gold</h3>
+                    <p>Maximum exposure & features.</p>
+                    <button class="modal-open-btn" onclick="document.getElementById('modal-ouro').showModal()">View Benefits</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAIS NATIVOS HTML5 (<dialog>) -->
+    <dialog id="modal-np" class="membership-modal">
+        <div class="modal-content">
+            <h3>NP Membership Benefits</h3>
+            <p>Cost: $0 / year</p>
+            <ul>
+                <li>Free access to basic training</li>
+                <li>Community event listings</li>
+            </ul>
+            <button onclick="document.getElementById('modal-np').close()">Close</button>
+        </div>
+    </dialog>
+
+    <dialog id="modal-bronze" class="membership-modal">
+        <div class="modal-content">
+            <h3>Bronze Membership Benefits</h3>
+            <p>Cost: $100 / year</p>
+            <ul>
+                <li>Standard directory listing</li>
+                <li>Invitations to networking events</li>
+                <li>Access to monthly training</li>
+            </ul>
+            <button onclick="document.getElementById('modal-bronze').close()">Close</button>
+        </div>
+    </dialog>
+
+    <dialog id="modal-prata" class="membership-modal">
+        <div class="modal-content">
+            <h3>Silver Membership Benefits</h3>
+            <p>Cost: $250 / year</p>
+            <ul>
+                <li>Highlighted directory listing</li>
+                <li>10% discount on special event tickets</li>
+                <li>Quarterly advertising in newsletter</li>
+            </ul>
+            <button onclick="document.getElementById('modal-prata').close()">Close</button>
+        </div>
+    </dialog>
+
+    <dialog id="modal-ouro" class="membership-modal">
+        <div class="modal-content">
+            <h3>Gold Membership Benefits</h3>
+            <p>Cost: $500 / year</p>
+            <ul>
+                <li>Top directory listing with logo</li>
+                <li>Homepage feature / Business spotlight</li>
+                <li>Free entry to all networking events</li>
+                <li>Exclusive VIP training sessions</li>
+            </ul>
+            <button onclick="document.getElementById('modal-ouro').close()">Close</button>
+        </div>
+    </dialog>
+
+    <footer class="site-footer">
+        <div class="footer-item footer-item--contact">
+            <h3>Chamber of Canoas</h3>
+            <p>140. Claudio Bloedow Schultz street, são josé</p>
+            <p>Canoas, RS, Brasil</p>
+            <p>info@chambercanoas.org</p>
+            <p>(51) 3456-7890</p>
+        </div>
+
+        <div class="footer-item footer-item--social">
+          <a href="https://github.com/your-username" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.5 7.5 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/your-username" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.15C0 .52.53 0 1.19 0h13.62C15.47 0 16 .52 16 1.15v13.7c0 .63-.53 1.15-1.19 1.15H1.19C.53 16 0 15.48 0 14.85V1.15ZM4.75 13.4V6.16H2.4v7.24h2.35Zm-1.17-8.23c.82 0 1.33-.55 1.33-1.23-.01-.7-.51-1.22-1.31-1.22s-1.33.53-1.33 1.22c0 .68.5 1.23 1.29 1.23h.02Zm4.19 8.23V9.36c0-.2.01-.4.07-.55.16-.4.52-.81 1.13-.81.8 0 1.12.6 1.12 1.49v3.91h2.35V9.2c0-2.17-1.16-3.18-2.7-3.18-1.25 0-1.8.69-2.11 1.17v.03h-.02l.02-.03V6.16H5.3c.03.66 0 7.24 0 7.24h2.47Z"/></svg>
+          </a>
+          <a href="https://x.com/your-username" aria-label="X" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M12.6 1h2.45l-5.35 6.12L16 15h-4.94l-3.87-5.06L2.76 15H.3l5.72-6.55L0 1h5.06l3.5 4.63L12.6 1Zm-.86 12.53h1.36L4.32 2.4H2.86l8.88 11.13Z"/></svg>
+          </a>
+        </div>
+
+        <div class="footer-item footer-item--modified">
+          <p>&copy; <span id="currentyear"></span> Matheus Serafim &bull; Rio Grande do Sul, Brasil</p>
+          <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+
+    <!-- LÓGICA DO TIMESTAMP -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const timestampInput = document.getElementById("timestamp");
+            if (timestampInput) {
+                timestampInput.value = new Date().toISOString();
+            }
+        });
+        </script>
+    </script>
+</body>
+</html>
