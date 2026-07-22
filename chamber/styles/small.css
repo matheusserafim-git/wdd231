@@ -1,4 +1,7 @@
 :root {
+  /* ==========================================================================
+     PALETA DE CORES (Padronizada apenas com Hexadecimal para passar no validador)
+     ========================================================================== */
   --color-ink: #223c5e;
   --color-ink-soft: #283246;
   --color-paper: #eef1f4;
@@ -9,21 +12,35 @@
   --color-accent-2: #3dc4c4;
   --color-border: #d8dee4;
   
-  /* Cores padronizadas para eliminar o alerta de tipos de cores */
   --color-border-dark: #b7d5e9;
   --color-dark-pitch: #111111;
   --color-gray-light: #dddddd;
   --color-gray-mid: #bbbbbb;
   --color-bg-done: #f4faf9;
 
-  /* Cores dos Spotlights em variáveis para o validador */
+  /* Cores dos Spotlights */
   --color-gold-bg: #fef3c7;
   --color-gold-text: #d97706;
   --color-silver-bg: #e0f2fe;
   --color-silver-text: #0369a1;
-  --color-footer-social: rgba(255, 255, 255, 0.8);
-  --color-footer-text: rgba(255, 255, 255, 0.55);
 
+  /* Sombras, Transparências e Novas Cores do Formulário (Hex com Alpha) */
+  --color-footer-social: #ffffffcc; /* rgba(255, 255, 255, 0.8) */
+  --color-footer-text: #ffffff8c;   /* rgba(255, 255, 255, 0.55) */
+  --color-shadow-1: #0000000d;      /* rgba(0, 0, 0, 0.05) */
+  --color-shadow-2: #00000014;      /* rgba(0, 0, 0, 0.08) */
+  --color-shadow-3: #0000001a;      /* rgba(0, 0, 0, 0.1) */
+  --color-transparent: #00000000;   
+  
+  --color-primary-blue: #1e3a8a;
+  --color-primary-blue-hover: #1e40af;
+  --color-link: #007bff;
+  --color-link-hover: #0056b3;
+  --color-cta-hover: #f0b84c;
+
+  /* ==========================================================================
+     TIPOGRAFIA & LAYOUT
+     ========================================================================== */
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Work Sans", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
@@ -45,7 +62,7 @@ img {
   display: block;
 }
 
-/* Agrupamento de display flex original para poupar linhas */
+/* Agrupamento para poupar linhas */
 .site-header,
 .site-header__brand,
 .site-nav a,
@@ -133,7 +150,7 @@ h1 a { color: inherit; }
 .menu-toggle {
   margin: 1rem;
   color: var(--color-surface); 
-  background: transparent;     
+  background: var(--color-transparent);     
   border: none;
   font-size: 1.5rem;           
   cursor: pointer;
@@ -197,11 +214,26 @@ h1 a { color: inherit; }
 .page-heading h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); }
 
 /* ==========================================================================
-   Cards & Filtros
+   Cards Genéricos (Unificando membro e join)
    ========================================================================== */
-.filter-row {
-  justify-content: center;
+.member-card, .card {
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow: hidden;
 }
+
+.member-card:hover, .card:hover {
+  transform: translateY(-4px);
+}
+
+/* ==========================================================================
+   Filtros & Controles
+   ========================================================================== */
+.filter-row { justify-content: center; }
 
 .filter-btn {
   font-family: var(--font-mono);
@@ -212,7 +244,7 @@ h1 a { color: inherit; }
   border-radius: 999px;
   padding: 0.5rem 1.3rem;
   cursor: pointer;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 .filter-btn:hover { border-color: var(--color-accent-2); }
@@ -222,9 +254,6 @@ h1 a { color: inherit; }
   color: var(--color-surface);
 }
 
-/* ==========================================================================
-   Controle do Diretório & Membros (SEU LAYOUT ORIGINAL)
-   ========================================================================== */
 .directory-controls {
   display: flex;
   justify-content: center;
@@ -240,7 +269,7 @@ h1 a { color: inherit; }
   cursor: pointer;
   font-family: var(--font-display);
   font-size: 1rem;
-  transition: .2s;
+  transition: all .2s;
 }
 
 .view-btn:hover, .view-btn.active {
@@ -248,10 +277,10 @@ h1 a { color: inherit; }
   color: var(--color-surface);
 }
 
-.directory {
-  display: grid;
-  gap: 1.5rem;
-}
+/* ==========================================================================
+   Diretório de Membros
+   ========================================================================== */
+.directory { display: grid; gap: 1.5rem; }
 
 .grid-view {
   display: grid;
@@ -259,16 +288,8 @@ h1 a { color: inherit; }
   gap: 1.5rem;
 }
 
-.member-card {
-  background: var(--color-gray-light);
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  transition: transform 0.2s ease, box-shadow 0.2s;
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-}
+.member-card { background: var(--color-gray-light); }
+.member-card:hover { box-shadow: 0 10px 25px var(--color-shadow-2); }
 
 .tag {
   text-align: center;
@@ -276,11 +297,6 @@ h1 a { color: inherit; }
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--color-border-dark);
   margin-bottom: 1rem;
-}
-
-.member-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
 }
 
 .member-header {
@@ -311,39 +327,22 @@ h1 a { color: inherit; }
   color: var(--color-ink);
 }
 
-/* Regras originais da sua lista preservadas */
 .list-view {
   display: flex;
   flex-direction: column;
 }
 
-.list-view .member-card {
-  padding: 1rem;
-  width: 50px;
-  height: 50px;
-}
+.list-view .member-card { padding: 1rem; }
 
-.card-content {
-  gap: 1rem;
-}
+.card-content { gap: 1rem; }
+.card-content img { width: 90px; object-fit: contain; }
 
-.card-content img {
-  width: 90px;
-  object-fit: contain;
-}
+.list-view .member-header { border: none; width: 250px; }
+.list-view .member-header img { width: 70px; height: 70px; }
 
-.list-view .member-header {
-  border: none;
-  width: 250px;
-}
-
-.list-view .member-header img {
-  width: 70px;
-  height: 70px;
-}
-
-/*===== join.html =====*/
-/* Container para alinhar os cartões lado a lado */
+/* ==========================================================================
+   Página Join (Cards & Formulário)
+   ========================================================================== */
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -351,90 +350,52 @@ h1 a { color: inherit; }
   margin-top: 1rem;
 }
 
-/* Estilo individual de cada cartão */
 .card {
-  background-color: #ffffff;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
+  background: var(--color-surface);
+  box-shadow: 0 4px 6px var(--color-shadow-1);
   justify-content: space-between;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efeito ao passar o mouse */
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
+.card:hover { box-shadow: 0 8px 15px var(--color-shadow-3); }
+.card h3 { margin-top: 0; color: var(--color-primary-blue); }
 
-/* Estilo dos títulos dos cartões */
-.card h3 {
-  margin-top: 0;
-  color: #1e3a8a; /* Exemplo de cor azul alinhada ao cabeçalho */
-}
-
-/* Estilo do botão dentro do cartão */
 .card button {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #1e3a8a;
-  color: white;
+  background-color: var(--color-primary-blue);
+  color: var(--color-surface);
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
-.card button:hover {
-  background-color: #1e40af;
-}
+.card button:hover { background-color: var(--color-primary-blue-hover); }
 
-.results-card{
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-}
-
-/* Define o estado base do link */
+/* Thank You - Link Results */
 #results a {
-  color: #007bff; /* Uma cor azul padrão para links */
-  text-decoration: none; /* Remove o sublinhado padrão */
-  border-bottom: 1px solid transparent; /* Prepara uma borda inferior invisível */
-
-  /* Define a transição */
-  transition-property: color, border-color; /* Quais propriedades devem ter transição */
-  transition-duration: 0.3s; /* Quanto tempo a transição leva (0.3 segundos) */
-  transition-timing-function: ease; /* Uma curva de velocidade suave */
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-transparent);
+  transition: all 0.3s ease;
 }
 
-/* Define o estado do link quando o usuário passa o mouse (:hover) */
 #results a:hover {
-  color: #0056b3; /* Uma cor azul mais escura para o hover */
-  border-bottom-color: #0056b3; /* Mostra a borda inferior com a cor do hover */
+  color: var(--color-link-hover);
+  border-bottom-color: var(--color-link-hover);
 }
 
-/*=====animations=====*/
+.results-card { animation: fadeIn 1s ease-out forwards; }
+
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ==========================================================================
-   Spotlights & Componentes da Home
+   Spotlights & Home Sections
    ========================================================================== */
-.spotlight-card {
-  border-top: 4px solid var(--color-border) !important;
-}
-
+.spotlight-card { border-top: 4px solid var(--color-border) !important; }
 .spotlight-card--gold { border-top-color: var(--color-accent) !important; }
 .spotlight-card--silver { border-top-color: var(--color-accent-2) !important; }
 
@@ -473,7 +434,7 @@ h1 a { color: inherit; }
 
 .cta-button:hover {
   transform: translateY(-1px);
-  background: #f0b84c;
+  background: var(--color-cta-hover);
 }
 
 .events-section, .weather-section, .spotlights-section {
@@ -484,9 +445,7 @@ h1 a { color: inherit; }
   transition: transform 0.2s ease;
 }
 
-.events-section:hover, .weather-section:hover {
-  transform: translateY(-2px);
-}
+.events-section:hover, .weather-section:hover { transform: translateY(-2px); }
 
 #forecast-list {
   display: flex;
@@ -529,7 +488,7 @@ h1 a { color: inherit; }
 
 .footer-item { width: 100%; }
 .footer-item--social { justify-content: center; gap: 1rem; }
-.footer-item--social a { color: var(--color-footer-social); }
+.footer-item--social a { color: var(--color-footer-social); transition: color 0.2s; }
 .footer-item--social a:hover { color: var(--color-accent); }
 .footer-item--info p, .footer-item--modified p { margin: 0; }
 
@@ -543,7 +502,5 @@ h1 a { color: inherit; }
    Media Queries
    ========================================================================== */
 @media (max-width: 699px) {
-  .grid-view {
-    grid-template-columns: 1fr;
-  }
+  .grid-view { grid-template-columns: 1fr; }
 }
