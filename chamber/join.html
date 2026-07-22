@@ -15,14 +15,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="icon" href="images/favicon.ico" >
+    <link rel="icon" href="images/favicon.ico">
 
-    <link rel="stylesheet" href="styles/small.css" >
-    <link rel="stylesheet" href="styles/large.css" >
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    
+    <!-- Link your external scripts in the head -->
     <script type="module" src="scripts/home.js"></script>
-    <script src="scripts/navigation.js" defer ></script>
-
-
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/join.js" defer></script>
 </head>
 <body>
     <header class="site-header">
@@ -44,10 +45,8 @@
         </nav>
     </header>
 
-    <!-- CONTAINER PRINCIPAL PARA O LAYOUT -->
     <main class="join-container">
         
-        <!-- SEÇÃO DO FORMULÁRIO -->
         <section class="form-section">
             <h1>Chamber Membership Application</h1>
             <form method="get" action="thankyou.html" class="membership-form">
@@ -90,50 +89,44 @@
                     <textarea name="description" title="Brief description of your organization"></textarea>
                 </label>
 
-                <!-- CAMPO OCULTO DE TIMESTAMP -->
                 <input type="hidden" id="timestamp" name="timestamp">
 
                 <input type="submit" value="Join the Chamber">
             </form>
         </section>
 
-        <!-- SEÇÃO DOS CARTÕES DE ADESÃO -->
-        <section class="cards-section">
+        <section class="association-levels">
             <h2>Membership Levels</h2>
-            <div class="membership-cards">
-                <!-- Cartão NP -->
-                <div class="membership-card np-card">
+            <div class="cards-container">
+                <!-- Data attributes added to trigger modals via external JS -->
+                <div class="card">
                     <h3>NP Membership</h3>
                     <p>For non-profit organizations.</p>
-                    <button class="modal-open-btn" onclick="document.getElementById('modal-np').showModal()">View Benefits</button>
+                    <button class="modal-open-btn" data-modal="modal-np">View Benefits</button>
                 </div>
 
-                <!-- Cartão Bronze -->
-                <div class="membership-card bronze-card">
+                <div class="card">
                     <h3>Bronze</h3>
                     <p>Essential benefits for growth.</p>
-                    <button class="modal-open-btn" onclick="document.getElementById('modal-bronze').showModal()">View Benefits</button>
+                    <button class="modal-open-btn" data-modal="modal-bronze">View Benefits</button>
                 </div>
 
-                <!-- Cartão Prata -->
-                <div class="membership-card prata-card">
+                <div class="card">
                     <h3>Silver</h3>
                     <p>Advanced advertising & events.</p>
-                    <button class="modal-open-btn" onclick="document.getElementById('modal-prata').showModal()">View Benefits</button>
+                    <button class="modal-open-btn" data-modal="modal-prata">View Benefits</button>
                 </div>
 
-                <!-- Cartão Ouro -->
-                <div class="membership-card ouro-card">
+                <div class="card">
                     <h3>Gold</h3>
                     <p>Maximum exposure & features.</p>
-                    <button class="modal-open-btn" onclick="document.getElementById('modal-ouro').showModal()">View Benefits</button>
+                    <button class="modal-open-btn" data-modal="modal-ouro">View Benefits</button>
                 </div>
             </div>
         </section>
 
     </main>
-
-    <!-- MODAIS NATIVOS HTML5 (<dialog>) -->
+    
     <dialog id="modal-np" class="membership-modal">
         <div class="modal-content">
             <h3>NP Membership Benefits</h3>
@@ -142,7 +135,7 @@
                 <li>Free access to basic training</li>
                 <li>Community event listings</li>
             </ul>
-            <button onclick="document.getElementById('modal-np').close()">Close</button>
+            <button class="modal-close-btn">Close</button>
         </div>
     </dialog>
 
@@ -155,7 +148,7 @@
                 <li>Invitations to networking events</li>
                 <li>Access to monthly training</li>
             </ul>
-            <button onclick="document.getElementById('modal-bronze').close()">Close</button>
+            <button class="modal-close-btn">Close</button>
         </div>
     </dialog>
 
@@ -168,7 +161,7 @@
                 <li>10% discount on special event tickets</li>
                 <li>Quarterly advertising in newsletter</li>
             </ul>
-            <button onclick="document.getElementById('modal-prata').close()">Close</button>
+            <button class="modal-close-btn">Close</button>
         </div>
     </dialog>
 
@@ -182,7 +175,7 @@
                 <li>Free entry to all networking events</li>
                 <li>Exclusive VIP training sessions</li>
             </ul>
-            <button onclick="document.getElementById('modal-ouro').close()">Close</button>
+            <button class="modal-close-btn">Close</button>
         </div>
     </dialog>
 
@@ -212,16 +205,5 @@
           <p>Last Modification: <span id="lastModified"></span></p>
         </div>
     </footer>
-
-    <!-- LÓGICA DO TIMESTAMP -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const timestampInput = document.getElementById("timestamp");
-            if (timestampInput) {
-                timestampInput.value = new Date().toISOString();
-            }
-        });
-        
-    </script>
 </body>
 </html>

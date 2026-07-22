@@ -1,11 +1,9 @@
-
 const apiKey = '9ef3c63ad38c1a7b6e9ce1ece59269c8'; 
 const lat = '-29.9181';
 const lon = '-51.1781';
 
 const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${apiKey}`;
-const membersUrl = 'data/members.json'; // Certifique-se de que o caminho corresponda ao seu arquivo JSON
-
+const membersUrl = 'data/members.json';
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchWeatherData();
@@ -16,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // 1. SEÇÃO DE CLIMA (Dados Reais + Previsão de 3 dias)
 // ==========================================================================
 async function fetchWeatherData() {
+    // Se a página atual não possui a área de clima, nem executa a requisição
+    const weatherDescEl = document.getElementById('weather-desc');
+    const currentTempEl = document.getElementById('current-temp');
+    if (!weatherDescEl || !currentTempEl) return;
+
     try {
         const response = await fetch(weatherUrl);
         if (!response.ok) throw new Error('Falha ao buscar dados meteorológicos');
@@ -24,24 +27,31 @@ async function fetchWeatherData() {
         displayWeather(data);
     } catch (error) {
         console.error('Erro na seção de clima:', error);
-        document.getElementById('weather-desc').textContent = 'Erro ao carregar clima.';
+        if (weatherDescEl) {
+            weatherDescEl.textContent = 'Erro ao carregar clima.';
+        }
     }
 }
 
 function displayWeather(data) {
-    // 1. Clima Atual (Pegando o primeiro elemento do array da lista)
+    const currentTempEl = document.getElementById('current-temp');
+    const weatherDescEl = document.getElementById('weather-desc');
+    const forecastList = document.getElementById('forecast-list');
+
+    // Proteção extra: cancela se algum elemento não for encontrado
+    if (!currentTempEl || !weatherDescEl || !forecastList) return;
+
+    // 1. Clima Atual
     const current = data.list[0];
     const currentTemp = Math.round(current.main.temp);
     const description = current.weather[0].description;
     
-    document.getElementById('current-temp').textContent = currentTemp;
-    document.getElementById('weather-desc').textContent = capitalize(description);
+    currentTempEl.textContent = currentTemp;
+    weatherDescEl.textContent = capitalize(description);
 
-    // 2. Previsão de 3 dias (Filtrando previsões próximas ao meio-dia dos próximos dias)
-    const forecastList = document.getElementById('forecast-list');
-    forecastList.innerHTML = ''; // Limpa o "Carregando..."
+    // 2. Previsão de 3 dias
+    forecastList.innerHTML = '';
 
-    // Agrupa e filtra para pegar um ponto de dados por dia subsequente (a cada 24h aproximadamente de intervalo ou índice de 8 em 8 se a API for de 3h)
     const dailyData = data.list.filter(item => item.dt_txt.includes("12:00:00")).slice(0, 3);
 
     dailyData.forEach(day => {
@@ -60,39 +70,46 @@ function displayWeather(data) {
 // 2. SEÇÃO DE DESTAQUES (Membros Gold/Silver Dinâmicos)
 // ==========================================================================
 async function fetchChamberSpotlights() {
+    const container = document.getElementById('spotlight-container');
+    // Se a página atual não tiver o container de destaques, encerra sem dar erro
+    if (!container) return;
+
     try {
         const response = await fetch(membersUrl);
         if (!response.ok) throw new Error('Falha ao carregar lista de membros');
         const members = await response.json();
         
-        // FILTRO ATUALIZADO: 3 = Gold, 2 = Silver
+        // FILTRO: 3 = Gold, 2 = Silver
         const eligibleMembers = members.filter(m => 
             m && (m.membership === 3 || m.membership === 2)
         );
 
         if (eligibleMembers.length === 0) {
-            document.getElementById('spotlight-container').innerHTML = '<p>Nenhum membro ouro ou prata encontrado.</p>';
+            container.innerHTML = '<p>Nenhum membro ouro ou prata encontrado.</p>';
             return;
         }
 
         // Selecionar aleatoriamente entre 2 ou 3 membros
-        const count = Math.floor(Math.random() * 2) + 3; 
+        const count = Math.floor(Math.random() * 2) + 2; 
         const shuffled = eligibleMembers.sort(() => 0.5 - Math.random());
         const selectedSpotlights = shuffled.slice(0, count);
 
         displaySpotlights(selectedSpotlights);
     } catch (error) {
         console.error('Erro na seção de destaques:', error);
-        document.getElementById('spotlight-container').innerHTML = '<p>Erro ao carregar destaques da empresa.</p>';
+        if (container) {
+            container.innerHTML = '<p>Erro ao carregar destaques da empresa.</p>';
+        }
     }
 }
 
 function displaySpotlights(members) {
     const container = document.getElementById('spotlight-container');
+    if (!container) return;
+
     container.innerHTML = ''; 
 
     members.forEach(member => {
-        // Converte o número para texto para exibir na Tag e na Classe CSS
         const levelText = member.membership === 3 ? 'Gold' : 'Silver';
 
         const card = document.createElement('div');
@@ -113,9 +130,8 @@ function displaySpotlights(members) {
         container.appendChild(card);
     });
 }
+
 // Helper para formatar primeira letra maiúscula
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
-
-

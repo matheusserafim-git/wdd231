@@ -342,6 +342,92 @@ h1 a { color: inherit; }
   height: 70px;
 }
 
+/*===== join.html =====*/
+/* Container para alinhar os cartões lado a lado */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Estilo individual de cada cartão */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito ao passar o mouse */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo dos títulos dos cartões */
+.card h3 {
+  margin-top: 0;
+  color: #1e3a8a; /* Exemplo de cor azul alinhada ao cabeçalho */
+}
+
+/* Estilo do botão dentro do cartão */
+.card button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #1e40af;
+}
+
+.results-card{
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+/* Define o estado base do link */
+#results a {
+  color: #007bff; /* Uma cor azul padrão para links */
+  text-decoration: none; /* Remove o sublinhado padrão */
+  border-bottom: 1px solid transparent; /* Prepara uma borda inferior invisível */
+
+  /* Define a transição */
+  transition-property: color, border-color; /* Quais propriedades devem ter transição */
+  transition-duration: 0.3s; /* Quanto tempo a transição leva (0.3 segundos) */
+  transition-timing-function: ease; /* Uma curva de velocidade suave */
+}
+
+/* Define o estado do link quando o usuário passa o mouse (:hover) */
+#results a:hover {
+  color: #0056b3; /* Uma cor azul mais escura para o hover */
+  border-bottom-color: #0056b3; /* Mostra a borda inferior com a cor do hover */
+}
+
+/*=====animations=====*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ==========================================================================
    Spotlights & Componentes da Home
    ========================================================================== */
