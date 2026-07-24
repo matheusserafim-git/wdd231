@@ -1,199 +1,29 @@
 @media (min-width: 700px) {
-  /* ==========================================================================
-     Header & Navegação (Desktop - Comum para ambas as páginas)
-     ========================================================================== */
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start; 
-    gap: 1rem;               
-    padding: 1.5rem 2rem;
-  }
-
-  .site-header__brand {
-    flex: none;
-    justify-content: flex-start; 
-    padding: 0; 
-  }
-
-  .menu-toggle {
-    display: none; 
-  }
-
-  .site-nav {
-    display: flex !important; 
-    flex-direction: row;      
-    justify-content: flex-start; 
-    width: auto;
-    gap: 0.5rem;
-    background: transparent;
-    order: 0;
-  }
-
-  .site-nav_tab {
-    width: auto;
-    flex: none;
-  }
-
-  .site-nav_tab a {
-    display: inline-block;
-    background: transparent;
-    color: var(--color-surface);  
-    border-bottom: none;         
-    padding: 0.6rem 1.1rem;
-    border-radius: 4px;
-    transition: background 0.2s ease, color 0.2s ease;
-  }
-
-  .site-nav_tab a:hover {
-    background: var(--color-accent);
-    color: var(--color-ink);
-  }
-
-  /* ==========================================================================
-     Layout da Página Inicial (Home - index.html)
-     ========================================================================== */
-  .hero-section {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--radius);
-  }
-
-  .hero-image {
-    height: 450px;
-    width: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .hero-cta {
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-    max-width: 420px;
-    /* Efeito de vidro fosco moderno */
-    background: rgba(34, 60, 94, 0.8); 
-    backdrop-filter: blur(8px); 
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--color-surface);
-    padding: 2.5rem;
-    border-radius: var(--radius);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  }
-
-  .hero-cta h2 {
-    color: var(--color-accent); 
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-  }
+  .site-header { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem 2rem; }
+  .site-header__brand { flex: none; justify-content: flex-start; padding: 0; }
   
-  .hero-cta p {
-    color: var(--color-surface);
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  /* Eventos e Clima lado a lado */
-  .home-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-
+  .menu-toggle { display: none; }
+  .site-nav { display: flex !important; flex-direction: row; justify-content: flex-start; width: auto; gap: 0.5rem; background: var(--color-transparent); order: 0; }
+  .site-nav_tab { width: auto; flex: none; }
+  .site-nav_tab a { display: inline-block; background: var(--color-transparent); color: var(--color-surface); border-bottom: none; padding: 0.6rem 1.1rem; border-radius: 4px; transition: background 0.2s ease, color 0.2s ease; }
+  .site-nav_tab a:hover { background: var(--color-accent); color: var(--color-ink); }
   
+  .hero-image { height: 450px; }
+  .hero-cta { left: 5%; transform: translateY(-50%); max-width: 420px; background: #223c5ecc; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid #ffffff1a; color: var(--color-surface); padding: 2.5rem; box-shadow: 0 20px 40px var(--color-shadow-hero); text-align: left; }
+  .hero-cta h2 { color: var(--color-accent); font-size: 1.8rem; margin-bottom: 0.5rem; }
+  .hero-cta p { color: var(--color-surface); font-size: 1rem; margin-bottom: 1rem; }
 
-  /* 3 Cards de Destaques (Spotlights) lado a lado */
-  .spotlight-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  /* ==========================================================================
-     Layout da Página do Diretório (Directory - directory.html)
-     ========================================================================== */
-  .directory-layout {
-    display: block; /* Garante que o container se comporte bem no desktop */
-  }
-
-  /* Membros em modo Grid: 3 colunas perfeitas no desktop */
-  .grid-view {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  /* Ajuste para o modo Lista no Desktop */
-  .list-view .member-card {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    padding: 0.75rem 1.5rem;
-  }
-
-  /* ==========================================================================
-     Footer Compartilhado (3 colunas perfeitas alinhadas com o seu HTML)
-     ========================================================================== */
-  .site-footer {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    padding: 2rem;
-    gap: 2rem;
-  }
-
-  .site-footer .footer-item {
-    flex: 1;
-    width: auto; 
-  }
-
-  /* Coluna 1: Contato (Esquerda) */
-  .footer-item--contact {
-    text-align: left;
-  }
-
-  /* Coluna 2: Redes Sociais Centrais (Ícones circulares como no template) */
-  .footer-item--social {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .footer-item--social a {
-    background-color: var(--color-ink-soft);
-    color: var(--color-surface);
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease, color 0.2s ease;
-  }
-
-  .footer-item--social a:hover {
-    background-color: var(--color-accent);
-    color: var(--color-ink);
-  }
-
-  /* Coluna 3: Modificação e Direitos (Direita) */
-  .footer-item--modified {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.2rem;
-  }
-}
-
-/* ==========================================================================
-   ========================================================================== */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .view-btn, .cta-button, .site-nav_tab a { transition: none; }
+  .home-grid { grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+  .spotlight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .grid-view { grid-template-columns: repeat(3, 1fr); }
+  
+  .list-view .member-card { flex-direction: row; justify-content: space-between; align-items: center; width: 100%; height: auto; padding: 0.75rem 1.5rem; }
+  
+  .site-footer { flex-direction: row; justify-content: space-between; align-items: center; text-align: left; padding: 2rem; gap: 2rem; }
+  .site-footer .footer-item { flex: 1; width: auto; }
+  .footer-item--contact { text-align: left; }
+  .footer-item--social { justify-content: center; align-items: center; gap: 1.5rem; }
+  .footer-item--social a { background-color: var(--color-ink-soft); color: var(--color-surface); border-radius: 50%; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; transition: background-color 0.2s ease, color 0.2s ease; }
+  .footer-item--social a:hover { background-color: var(--color-accent); color: var(--color-ink); }
+  .footer-item--modified { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; }
 }
