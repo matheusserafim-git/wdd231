@@ -64,8 +64,8 @@ h1 a { color: inherit; }
 
 .directory-layout, .home-layout { margin: auto; max-width: 1200px; padding: 1rem; }
 .home-layout { display: flex; flex-direction: column; gap: 1.5rem; }
-.home-grid, .directory, .grid-view, .cards-container { display: grid; gap: 1.5rem; }
-.home-grid, .grid-view { grid-template-columns: 1fr; }
+.home-grid, .directory, .grid-view, .cards-container, .discover-grid { display: grid; gap: 1.5rem; }
+.home-grid, .grid-view, .discover-grid { grid-template-columns: 1fr; }
 .cards-container { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 1rem; }
 
 /* Botões */
@@ -112,7 +112,7 @@ h1 a { color: inherit; }
 .member-info { padding: 1rem; display: grid; gap: .5rem; }
 .member-info span { font-weight: bold; color: var(--color-ink); }
 .list-view { display: flex; flex-direction: column; }
-.list-view .member-card { padding: 1rem; }
+.list-view .member-card, .discover-grid { padding: 1rem; }
 .card-content { gap: 1rem; }
 .card-content img { width: 90px; object-fit: contain; }
 .list-view .member-header { border: none; width: 250px; }

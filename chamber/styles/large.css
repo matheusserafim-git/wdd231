@@ -1,4 +1,4 @@
-@media (min-width: 700px) {
+@media (min-width: 1025px) {
   .site-header { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem 2rem; }
   .site-header__brand { flex: none; justify-content: flex-start; padding: 0; }
   
@@ -26,4 +26,35 @@
   .footer-item--social a { background-color: var(--color-ink-soft); color: var(--color-surface); border-radius: 50%; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; transition: background-color 0.2s ease, color 0.2s ease; }
   .footer-item--social a:hover { background-color: var(--color-accent); color: var(--color-ink); }
   .footer-item--modified { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; }
+
+  .discover-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "card1 card2 card3"
+            "card4 card5 card3"
+            "card4 card6 card7"
+            "card8 card8 card7";
+        gap: 2rem;
+    }
+    
+    /* Atribuindo classes ou posições específicas via grid-area se necessário, ou mapeando os filhos estruturais */
+    .discover-grid .discover-card:nth-child(1) { grid-area: card1; }
+    .discover-grid .discover-card:nth-child(2) { grid-area: card2; }
+    .discover-grid .discover-card:nth-child(3) { grid-area: card3; }
+    .discover-grid .discover-card:nth-child(4) { grid-area: card4; }
+    .discover-grid .discover-card:nth-child(5) { grid-area: card5; }
+    .discover-grid .discover-card:nth-child(6) { grid-area: card6; }
+    .discover-grid .discover-card:nth-child(7) { grid-area: card7; }
+    .discover-grid .discover-card:nth-child(8) { grid-area: card8; }
+
+    /* Efeito de hover aplicado APENAS em telas grandes (computador), conforme passo 12 */
+    .discover-card figure img {
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .discover-card figure img:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1) drop-shadow(0px 8px 12px rgba(0,0,0,0.2));
+    }
 }

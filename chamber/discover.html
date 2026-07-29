@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover - Canoas Chamber of Commerce</title>
+    <meta name="description" content="Discover points of interest, local culture, and attractions in Canoas, Rio Grande do Sul.">
+    <meta name="author" content="Matheus Serafim">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/medium.css"> 
+    <link rel="stylesheet" href="styles/large.css">
+    
+    <!-- Script principal com type="module" conforme exigido no passo 8 -->
+    <script type="module" src="scripts/discover.js" ></script>
+    <script src="scripts/navigation.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__brand">
+            <img src="images/chambercanoas.svg" alt="site logo" class="site-header__logo" width="40" height="40">
+            <span class="site-header__name">Canoas Chamber of Commerce</span>
+        </div>
+        <button id="menuButton" class="menu-toggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation menu">☰</button>
+        <nav id="siteNav" class="site-nav">
+            <div class="site-nav_tab">  
+                <a href="index.html">Home</a>
+            </div>
+            <div class="site-nav_tab">
+                <a href="directory.html">Directory</a>
+            </div>
+            <div class="site-nav_tab">
+                <a href="discover.html" class="active">Discover</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="discover-main">
+        <h1>Discover Canoas</h1>
+        
+        <!-- Área de Mensagem de Visitas (localStorage - Requisito 11) -->
+        <section id="visit-message" class="visit-banner">
+            <!-- Preenchido via JavaScript -->
+        </section>
+
+        <!-- Grade de Cartões com Grid Template Areas (Requisito 10) -->
+        <section class="discover-grid" id="discover-container">
+            <!-- Os 8 cartões serão injetados dinamicamente via JavaScript do arquivo .mjs -->
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-item footer-item--contact">
+            <h3>Chamber of Canoas</h3>
+            <p>140. Claudio Bloedow Schultz street, são josé</p>
+            <p>Canoas, RS, Brasil</p>
+            <p>info@chambercanoas.org</p>
+            <p>(51) 3456-7890</p>
+        </div>
+
+        <div class="footer-item footer-item--social">
+          <a href="https://github.com/your-username" aria-label="GitHub" target="_blank" rel="noopener">...</a>
+          <a href="https://linkedin.com/in/your-username" aria-label="LinkedIn" target="_blank" rel="noopener">...</a>
+          <a href="https://x.com/your-username" aria-label="X" target="_blank" rel="noopener">...</a>
+        </div>
+
+        <div class="footer-item footer-item--modified">
+            <p>&copy; <span id="currentyear"></span> Matheus Serafim &bull; Rio Grande do Sul, Brasil</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+</html>
