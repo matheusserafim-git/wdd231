@@ -143,6 +143,12 @@ h1 a { color: inherit; }
 .footer-item--social a { color: var(--color-footer-social); }
 .footer-item--info p, .footer-item--modified p { margin: 0; }
 .footer-item--modified { font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-footer-text); }
+/* Garante que qualquer h2 dentro de fundos escuros (--color-ink) receba cor clara */
+.site-header h2,
+.site-footer h2,
+.site-nav h2 {
+  color: var(--color-surface);
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
