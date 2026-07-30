@@ -4,14 +4,20 @@ const container = document.getElementById('discover-container');
 
 function displayItems(data) {
     container.innerHTML = '';
-    data.forEach(item => {
+    
+    // Adicionamos o 'index' (posição) no forEach
+    data.forEach((item, index) => {
         const card = document.createElement('div');
         card.classList.add('discover-card');
+
+        // Se for um dos 3 primeiros cartões (índice 0, 1 ou 2), carrega imediatamente (eager). 
+        // Do cartão 4 em diante (índice 3+), carrega com preguiça (lazy) para salvar performance.
+        const lazyAttribute = index < 3 ? 'loading="eager"' : 'loading="lazy"';
 
         card.innerHTML = `
             <h2>${item.name}</h2>
             <figure>
-                <img src="${item.photo}" alt="${item.name}" loading="lazy" width="300" height="200">
+                <img src="${item.photo}" alt="${item.name}" ${lazyAttribute} width="300" height="200">
             </figure>
             <address>${item.address}</address>
             <p>${item.description}</p>
@@ -21,9 +27,11 @@ function displayItems(data) {
     });
 }
 
+// Chama a função para exibir os itens
 displayItems(items);
 
-// 2. Lógica do localStorage para visitas (Requisito 11)
+
+// Lógica do localStorage para visitas (Requisito 11)
 const visitMessageContainer = document.getElementById('visit-message');
 const lastVisit = Number(localStorage.getItem('lastVisit-ms')) || 0;
 const currentVisit = Date.now();
