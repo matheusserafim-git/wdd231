@@ -48,12 +48,12 @@ a:hover { text-decoration: underline; }
 
 h1, h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-ink); margin: 0 0 0.75rem; }
 h1 a { color: inherit; }
-.page-heading { margin-bottom: 1.5rem; }
+.page-heading, .visit-banner { margin-bottom: 1.5rem; }
 .page-heading h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); }
 
 /* Layouts e Flex unificados */
 .site-header, .site-header__brand, .site-nav a, .view-btn, .card-content, 
-.list-view .member-card, .filter-row, .directory-controls, .footer-item--social, .site-nav {
+.list-view .member-card, .filter-row, .directory-controls, .footer-item--social, .site-nav, .site-nav--open, .discover-card, .discover-card figure {
   display: flex;
 }
 .site-header, .site-header__brand, .site-nav a, .view-btn, .card-content, 
@@ -64,8 +64,8 @@ h1 a { color: inherit; }
 
 .directory-layout, .home-layout { margin: auto; max-width: 1200px; padding: 1rem; }
 .home-layout { display: flex; flex-direction: column; gap: 1.5rem; }
-.home-grid, .directory, .grid-view, .cards-container { display: grid; gap: 1.5rem; }
-.home-grid, .grid-view { grid-template-columns: 1fr; }
+.home-grid, .directory, .grid-view, .cards-container, .discover-grid { display: grid; gap: 1.5rem; }
+.home-grid, .grid-view, .discover-grid { grid-template-columns: 1fr; }
 .cards-container { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 1rem; }
 
 /* Botões */
@@ -74,7 +74,7 @@ h1 a { color: inherit; }
 .menu-toggle { margin: 1rem; color: var(--color-surface); background: var(--color-transparent); font-size: 1.5rem; }
 .menu-toggle:hover, .menu-toggle:focus-visible { color: var(--color-accent); }
 
-.filter-btn, .view-btn { background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text); }
+.filter-btn, .view-btn, .visit-banner, .discover-card { background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text); }
 .filter-btn { font-family: var(--font-mono); font-size: 0.85rem; border-radius: 999px; padding: 0.5rem 1.3rem; }
 .view-btn { gap: .5rem; padding: .5rem 2rem; font-family: var(--font-display); font-size: 1rem; }
 .filter-btn:hover, .view-btn:hover { border-color: var(--color-accent-2); }
@@ -82,21 +82,21 @@ h1 a { color: inherit; }
 
 .cta-button { display: inline-block; background: var(--color-accent); color: var(--color-dark-pitch); padding: 0.8rem 2rem; border-radius: 50px; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
 .cta-button:hover { transform: translateY(-1px); background: var(--color-cta-hover); text-decoration: none; }
-.card button { margin-top: 1rem; padding: 0.5rem 1rem; background-color: var(--color-primary-blue); color: var(--color-surface); border-radius: 4px; }
+.card button, .discover-card button { margin-top: 1rem; padding: 0.5rem 1rem; background-color: var(--color-primary-blue); color: var(--color-surface); border-radius: 4px; }
 .card button:hover { background-color: var(--color-primary-blue-hover); }
 
 /* Header & Nav mobile */
+/* Header & Nav mobile */
 .site-header { flex-wrap: wrap; padding: 0.5rem 1rem; background: var(--color-ink); }
 .site-header__brand { gap: .75rem; padding: 1rem; flex: 1; }
-.site-header__logo { border-radius: var(--radius); }
+.site-header__logo, .visit-banner, .discover-card  { border-radius: var(--radius); }
 .site-header__name { color: var(--color-surface); font-weight: 500; }
 
 .site-nav { display: none; flex-direction: column; width: 100%; order: 999; background: var(--color-ink-soft); }
-.site-nav--open { display: flex; }
+.site-nav.site-nav--open { display: flex; }
 .site-nav a { justify-content: space-between; padding: 0.6rem 1.1rem; }
 .site-nav_tab a { display: block; padding: 1rem; background: var(--color-ink-soft); color: var(--color-surface); border-bottom: 1px solid var(--color-dark-pitch); transition: background 0.2s; }
 .site-nav_tab a.active { background-color: var(--color-ink); color: var(--color-accent); font-weight: 600; border-bottom: 3px solid var(--color-accent); }
-
 /* Cards & Seções */
 .member-card, .card, .events-section, .weather-section, .spotlights-section { 
   border-radius: var(--radius); border: 1px solid var(--color-border); padding: 1.5rem; 
@@ -150,18 +150,11 @@ h1 a { color: inherit; }
 
 /* Discover Mobile Base */
 .discover-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr;
     grid-template-areas: "card1" "card2" "card3" "card4" "card5" "card6" "card7" "card8";
 }
 
 .discover-card {
-    display: flex;
     flex-direction: column;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
     padding: 1.5rem;
     box-shadow: 0 4px 6px var(--color-shadow-1);
     height: 100%;
@@ -172,7 +165,6 @@ h1 a { color: inherit; }
     height: 200px;
     background: var(--color-paper);
     border-radius: 8px;
-    display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -186,12 +178,7 @@ h1 a { color: inherit; }
 }
 
 .discover-card button {
-    margin-top: auto;
-    padding: 0.6rem 1.2rem;
-    background: var(--color-primary-blue);
-    color: var(--color-surface);
     border: none;
-    border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -201,11 +188,7 @@ h1 a { color: inherit; }
 }
 
 .visit-banner {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
     padding: 1rem 1.5rem;
-    margin-bottom: 1.5rem;
     text-align: center;
 }
 
