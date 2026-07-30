@@ -1,0 +1,120 @@
+/* ==========================================
+   ESTILOS BASE (CELULAR / MOBILE FIRST)
+   ========================================== */
+.discover-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "card1"
+        "card2"
+        "card3"
+        "card4"
+        "card5"
+        "card6"
+        "card7"
+        "card8";
+}
+
+.discover-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px var(--color-shadow-1);
+    height: 100%;
+}
+
+.discover-card figure {
+    margin: 0 0 1rem 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--color-paper);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.discover-card figure img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.discover-card button {
+    margin-top: auto;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--color-primary-blue);
+    color: var(--color-surface);
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.discover-card button:hover {
+    background-color: var(--color-primary-blue-hover);
+}
+
+.visit-banner {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px var(--color-shadow-1);
+    text-align: center;
+}
+
+/* Mapeamento das áreas (Mobile) */
+.discover-grid .discover-card:nth-child(1) { grid-area: card1; }
+.discover-grid .discover-card:nth-child(2) { grid-area: card2; }
+.discover-grid .discover-card:nth-child(3) { grid-area: card3; }
+.discover-grid .discover-card:nth-child(4) { grid-area: card4; }
+.discover-grid .discover-card:nth-child(5) { grid-area: card5; }
+.discover-grid .discover-card:nth-child(6) { grid-area: card6; }
+.discover-grid .discover-card:nth-child(7) { grid-area: card7; }
+.discover-grid .discover-card:nth-child(8) { grid-area: card8; }
+
+
+/* ==========================================
+   TELA MÉDIA / TABLET (641px a 1024px)
+   ========================================== */
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+    .discover-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "card1 card2"
+            "card3 card4"
+            "card5 card6"
+            "card7 card8";
+    }
+}
+
+
+/* ==========================================
+   TELA GRANDE / DESKTOP (A partir de 1025px)
+   ========================================== */
+@media (min-width: 1025px) {
+    .discover-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "card1 card2 card3"
+            "card4 card5 card3"
+            "card4 card6 card7"
+            "card8 card8 card7";
+        gap: 2rem;
+    }
+
+    .discover-card figure img:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1) drop-shadow(0px 8px 12px rgba(0,0,0,0.2));
+    }
+}
