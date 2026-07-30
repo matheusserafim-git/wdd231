@@ -3,13 +3,13 @@ export const items = [
     "name": "Parque Getúlio Vargas (Capão do Corvo)",
     "address": "Rua Dona Rafaela, 700 - Centro, Canoas - RS",
     "description": "O principal parque da cidade, contando com ampla área verde, lago, trilhas ecológicas e espaço para lazer em família.",
-    "photo": "images/capaodocorvo.webp"
+    "photo": "images/view2.webp"
   },
   {
-    "name": "Museu Canoas / Villa Scharlau",
+    "name": "Museu Canoas / Parque dos Rosa",
     "address": "Av. Inconfidência, 497 - Centro, Canoas - RS",
     "description": "Espaço histórico que preserva a memória da colonização e o desenvolvimento urbano do município.",
-    "photo": "images/museu.webp"
+    "photo": "images/vila_rosa.webp"
   },
   {
     "name": "Catedral São Luís Gonzaga",
@@ -27,24 +27,24 @@ export const items = [
     "name": "Base Aérea de Canoas",
     "address": "Rua Herois da Ativa, s/n - Nossa Sra. das Graças, Canoas - RS",
     "description": "Unidade militar histórica da Força Aérea Brasileira com relevância estratégica nacional e eventos comemorativos.",
-    "photo": "images/baseaerea.webp"
+    "photo": "images/base_aerea.webp"
   },
   {
     "name": "Praça da Emancipação",
     "address": "Em frente à Prefeitura - Centro, Canoas - RS",
     "description": "Ponto de encontro central que abriga marcos cívicos e espaço público arborizado para circulação de pedestres.",
-    "photo": "images/pracaemancipacao.webp"
+    "photo": "images/praca_emancipacao.webp"
   },
   {
     "name": "Universidade Ulbra Canoas",
     "address": "Av. Farroupilha, 8001 - São José, Canoas - RS",
     "description": "Um dos maiores complexos educacionais do estado, contendo museu de ciências e áreas esportivas abertas.",
-    "photo": "images/ulbra.webp"
+    "photo": "images/Universidade_Ulbra_Canoas.webp"
   },
   {
-    "name": "Minuano Centro de Cultura",
-    "address": "Rua XV de Janeiro, 461 - Centro, Canoas - RS",
-    "description": "Espaço dedicado a eventos artísticos, exposições culturais e valorização das tradições gaúchas.",
-    "photo": "images/minuano.webp"
+    "name": "Casa das Artes Villa Mimosa",
+    "address": "Av. Guilherme Schell, 6270 - Centro, Canoas - RS",
+    "description": "Um dos prédios mais antigos da zona urbana de Canoas, tombado como patrimônio histórico municipal, dedicado à difusão, formação cultural, exposições artísticas e visitações guiadas.",
+    "photo": "images/villa_mimosa.webp"
   }
 ];

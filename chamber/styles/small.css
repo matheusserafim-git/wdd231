@@ -144,6 +144,66 @@ h1 a { color: inherit; }
 .footer-item--info p, .footer-item--modified p { margin: 0; }
 .footer-item--modified { font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-footer-text); }
 
+/* Atribuindo classes ou posições específicas via grid-area se necessário, ou mapeando os filhos estruturais */
+    .discover-grid .discover-card:nth-child(1) { grid-area: card1; }
+    .discover-grid .discover-card:nth-child(2) { grid-area: card2; }
+    .discover-grid .discover-card:nth-child(3) { grid-area: card3; }
+    .discover-grid .discover-card:nth-child(4) { grid-area: card4; }
+    .discover-grid .discover-card:nth-child(5) { grid-area: card5; }
+    .discover-grid .discover-card:nth-child(6) { grid-area: card6; }
+    .discover-grid .discover-card:nth-child(7) { grid-area: card7; }
+    .discover-grid .discover-card:nth-child(8) { grid-area: card8; }
+
+
+/* Torna cada cartão um flex container em coluna para controlar a altura */
+.discover-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px var(--color-shadow-1);
+    height: 100%; /* Faz o cartão preencher toda a altura da célula do grid */
+}
+
+/* Remove as margens indesejadas da tag figure e fixa a altura */
+.discover-card figure {
+    margin: 0 0 1rem 0;
+    width: 100%;
+    height: 200px; /* Altura fixa para manter a uniformidade */
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--color-paper); /* Adiciona um fundo para preencher os espaços em branco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Faz a imagem preencher a área sem distorcer, preservando a integridade visual */
+.discover-card figure img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* O segredo para ver a imagem inteira! */
+    display: block;
+}
+
+/* Estiliza o botão e o empurra para baixo */
+.discover-card button {
+    margin-top: auto; /* Esse é o truque para alinhar os botões no fundo! */
+    padding: 0.6rem 1.2rem;
+    background-color: var(--color-primary-blue);
+    color: var(--color-surface);
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.discover-card button:hover {
+    background-color: var(--color-primary-blue-hover);
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }

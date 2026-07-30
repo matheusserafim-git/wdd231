@@ -37,16 +37,6 @@
             "card8 card8 card7";
         gap: 2rem;
     }
-    
-    /* Atribuindo classes ou posições específicas via grid-area se necessário, ou mapeando os filhos estruturais */
-    .discover-grid .discover-card:nth-child(1) { grid-area: card1; }
-    .discover-grid .discover-card:nth-child(2) { grid-area: card2; }
-    .discover-grid .discover-card:nth-child(3) { grid-area: card3; }
-    .discover-grid .discover-card:nth-child(4) { grid-area: card4; }
-    .discover-grid .discover-card:nth-child(5) { grid-area: card5; }
-    .discover-grid .discover-card:nth-child(6) { grid-area: card6; }
-    .discover-grid .discover-card:nth-child(7) { grid-area: card7; }
-    .discover-grid .discover-card:nth-child(8) { grid-area: card8; }
 
     /* Efeito de hover aplicado APENAS em telas grandes (computador), conforme passo 12 */
     .discover-card figure img {
