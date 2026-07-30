@@ -198,6 +198,21 @@ h1 a { color: inherit; }
     text-align: center;
 }
 
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cards-container .card {
+  animation: fadeInSlide 0.8s ease-out forwards;
+}
+
 .discover-grid .discover-card:nth-child(1) { grid-area: card1; }
 .discover-grid .discover-card:nth-child(2) { grid-area: card2; }
 .discover-grid .discover-card:nth-child(3) { grid-area: card3; }
