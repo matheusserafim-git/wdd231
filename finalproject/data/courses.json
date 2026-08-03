@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "title": "HTML Fundamentals",
+    "category": "HTML",
+    "level": "Beginner",
+    "duration": "8 Hours",
+    "image": "images/html.webp",
+    "description": "Learn the structure of web pages using semantic HTML."
+  },
+  {
+    "id": 2,
+    "title": "CSS Fundamentals",
+    "category": "CSS",
+    "level": "Beginner",
+    "duration": "10 Hours",
+    "image": "images/css.webp",
+    "description": "Create responsive and beautiful websites."
+  },
+  {
+    "id": 3,
+    "title": "JavaScript Basics",
+    "category": "JavaScript",
+    "level": "Beginner",
+    "duration": "15 Hours",
+    "image": "images/javascript.webp",
+    "description": "Programming fundamentals using JavaScript."
+  },
+  {
+    "id": 4,
+    "title": "Advanced JavaScript",
+    "category": "JavaScript",
+    "level": "Intermediate",
+    "duration": "18 Hours",
+    "image": "images/javascript.webp",
+    "description": "Modern JavaScript including ES6 modules."
+  },
+  {
+    "id": 5,
+    "title": "Python Programming",
+    "category": "Python",
+    "level": "Beginner",
+    "duration": "20 Hours",
+    "image": "images/python.webp",
+    "description": "Introduction to Python programming."
+  },
+  {
+    "id": 6,
+    "title": "React Essentials",
+    "category": "React",
+    "level": "Intermediate",
+    "duration": "18 Hours",
+    "image": "images/react.webp",
+    "description": "Build interfaces with React."
+  },
+  {
+    "id": 7,
+    "title": "Node.js",
+    "category": "Backend",
+    "level": "Intermediate",
+    "duration": "16 Hours",
+    "image": "images/node.webp",
+    "description": "Backend development with Node."
+  },
+  {
+    "id": 8,
+    "title": "Git & GitHub",
+    "category": "Tools",
+    "level": "Beginner",
+    "duration": "5 Hours",
+    "image": "images/git.webp",
+    "description": "Version control and collaboration."
+  },
+  {
+    "id": 9,
+    "title": "SQL Basics",
+    "category": "Database",
+    "level": "Beginner",
+    "duration": "12 Hours",
+    "image": "images/sql.webp",
+    "description": "Relational databases."
+  },
+  {
+    "id": 10,
+    "title": "Responsive Design",
+    "category": "CSS",
+    "level": "Intermediate",
+    "duration": "8 Hours",
+    "image": "images/css.webp",
+    "description": "Mobile-first layouts."
+  },
+  {
+    "id": 11,
+    "title": "APIs with Fetch",
+    "category": "JavaScript",
+    "level": "Intermediate",
+    "duration": "9 Hours",
+    "image": "images/javascript.webp",
+    "description": "Consume REST APIs."
+  },
+  {
+    "id": 12,
+    "title": "Flexbox & Grid",
+    "category": "CSS",
+    "level": "Intermediate",
+    "duration": "7 Hours",
+    "image": "images/css.webp",
+    "description": "Modern layouts."
+  },
+  {
+    "id": 13,
+    "title": "TypeScript",
+    "category": "JavaScript",
+    "level": "Advanced",
+    "duration": "14 Hours",
+    "image": "images/typescript.webp",
+    "description": "Typed JavaScript."
+  },
+  {
+    "id": 14,
+    "title": "Express.js",
+    "category": "Backend",
+    "level": "Advanced",
+    "duration": "12 Hours",
+    "image": "images/node.webp",
+    "description": "Create APIs using Express."
+  },
+  {
+    "id": 15,
+    "title": "MongoDB",
+    "category": "Database",
+    "level": "Intermediate",
+    "duration": "11 Hours",
+    "image": "images/mongodb.webp",
+    "description": "NoSQL databases."
+  }
+]

@@ -1,0 +1,560 @@
+:root{
+
+    --primary:#1E3A8A;
+    --secondary:#F97316;
+
+    --background:#F8FAFC;
+    --surface:#FFFFFF;
+    --text:#334155;
+
+    --border:#D6DCE5;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+body{
+
+font-family:Arial, Helvetica, sans-serif;
+
+background:var(--background);
+
+color:var(--text);
+
+line-height:1.6;
+
+}
+
+header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:1rem 2rem;
+
+background:var(--surface);
+
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+position:sticky;
+
+top:0;
+
+z-index:100;
+
+}
+
+.logo{
+
+font-weight:bold;
+
+color:var(--primary);
+
+}
+
+nav{
+
+display:none;
+
+flex-direction:column;
+
+gap:1rem;
+
+padding-top:1rem;
+
+}
+
+nav.open{
+
+display:flex;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:var(--text);
+
+font-weight:600;
+
+}
+
+.active{
+
+color:var(--secondary);
+
+}
+
+#menuButton{
+
+background:none;
+
+border:none;
+
+font-size:2rem;
+
+cursor:pointer;
+
+}
+
+.hero{
+
+text-align:center;
+
+padding:4rem 1rem;
+
+background:var(--surface);
+
+}
+
+.hero h1{
+
+font-size:2.5rem;
+
+margin-bottom:1rem;
+
+color:var(--primary);
+
+}
+
+.hero p{
+
+max-width:600px;
+
+margin:auto;
+
+margin-bottom:2rem;
+
+}
+
+.search-area{
+
+display:flex;
+
+flex-direction:column;
+
+gap:1rem;
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+.search-area input{
+
+background:var(--surface);
+padding:1rem;
+
+border-radius:10px;
+
+border:1px solid var(--border);
+
+}
+
+.search-area button{
+
+padding:1rem;
+
+border:none;
+
+background:var(--secondary);
+
+color:white;
+
+cursor:pointer;
+
+border-radius:10px;
+
+}
+
+.featured{
+
+padding:3rem 1rem;
+
+}
+
+.course-grid{
+
+display:grid;
+
+grid-template-columns:1fr;
+
+gap:2rem;
+
+}
+
+.course-card {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.course-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.technologies{
+
+padding:3rem 1rem;
+
+background:var(--surface);
+
+}
+
+.tech-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:1rem;
+
+margin-top:2rem;
+
+}
+
+.tech-grid span{
+
+background:var(--primary);
+
+color:white;
+
+padding:1rem;
+
+text-align:center;
+
+border-radius:8px;
+
+}
+
+.cta{
+
+padding:4rem 2rem;
+
+text-align:center;
+
+}
+
+.button{
+
+display:inline-block;
+
+margin-top:1rem;
+
+padding:1rem 2rem;
+
+background:var(--secondary);
+
+color:white;
+
+text-decoration:none;
+
+border-radius:10px;
+
+}
+
+footer{
+
+background:var(--primary);
+
+color:white;
+
+text-align:center;
+
+padding:2rem;
+
+margin-top:3rem;
+
+}
+
+.course-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:1rem;
+}
+
+.course-card h3{
+    color:var(--primary);
+    margin-bottom:.75rem;
+}
+
+.course-card p{
+    margin:.35rem 0;
+}
+
+.details{
+
+margin-top:1rem;
+
+padding:.8rem;
+
+width:100%;
+
+border:none;
+
+background:var(--primary);
+
+color:white;
+
+cursor:pointer;
+
+border-radius:8px;
+
+}
+
+.details:hover{
+
+background:var(--secondary);
+
+}
+
+dialog{
+
+padding:2rem;
+
+border:none;
+
+border-radius:15px;
+
+max-width:500px;
+
+width:90%;
+
+}
+
+dialog::backdrop{
+
+background:rgba(0,0,0,.5);
+
+}
+
+#closeDialog{
+
+margin-top:1rem;
+
+padding:.8rem 1.5rem;
+
+background:var(--secondary);
+
+color:white;
+
+border:none;
+
+cursor:pointer;
+
+border-radius:8px;
+
+}
+
+.form-section{
+
+padding:3rem 1rem;
+
+}
+
+.contact-form{
+
+max-width:700px;
+
+margin:auto;
+
+background:white;
+
+padding:2rem;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.form-group{
+
+display:flex;
+
+flex-direction:column;
+
+margin-bottom:1.5rem;
+
+}
+
+.form-group label{
+
+margin-bottom:.5rem;
+
+font-weight:600;
+
+}
+
+.form-group input,
+.form-group textarea{
+
+padding:1rem;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+font:inherit;
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+
+outline:2px solid var(--secondary);
+
+border-color:var(--secondary);
+
+}
+
+.summary{
+
+max-width:700px;
+
+margin:2rem auto;
+
+background:white;
+
+padding:2rem;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.summary p{
+
+margin-bottom:1rem;
+
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+#themeButton {
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+#themeButton:hover {
+    transform: scale(1.15);
+}
+
+body.dark {
+    --primary: #60A5FA; /* Um azul mais claro e legível no fundo escuro */
+    --secondary: #FB923C;
+    --background: #0F172A;
+    --surface: #1E293B;
+    --text: #F8FAFC;
+    --border: #334155;
+}
+
+/* Garantindo que textos gerais, inputs e placeholders fiquem legíveis no modo escuro */
+body.dark input, 
+body.dark textarea {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+body.dark input::placeholder {
+    color: #94A3B8;
+}
+
+body.dark .contact-form,
+body.dark .summary {
+    background: var(--surface);
+    color: var(--text);
+}
+
+/* --- Estilos para os Botões do Card --- */
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+}
+
+.btn-tech {
+    flex: 1;
+    padding: 0.75rem;
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.btn-tech:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.details {
+    flex: 1;
+    margin-top: 0; /* Ajustado para alinhar com o .btn-tech */
+    padding: 0.75rem;
+    border: none;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.details:hover {
+    background: var(--secondary);
+}
+
+body,
+header,
+.hero,
+.course-card,
+.technologies,
+input,
+dialog,
+footer {
+
+    transition:
+        background-color .35s ease,
+        color .35s ease,
+        border-color .35s ease;
+
+}
