@@ -34,16 +34,31 @@ flex:1;
 
 }
 
-.course-grid{
+.course-grid {
+        /* Permite que o grid crie colunas de no mínimo 230px que se adaptam automaticamente */
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+
+.tech-grid{
 
 grid-template-columns:repeat(3,1fr);
 
 }
 
-.tech-grid{
+.hero {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding: 4rem 2rem;
+    }
 
-grid-template-columns:repeat(6,1fr);
+    .hero-content, 
+    .hero-image {
+        flex: 1;
+    }
 
-}
+    .hero .search-area {
+        margin: 0;
+    }
 
 }

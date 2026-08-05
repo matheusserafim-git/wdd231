@@ -53,12 +53,22 @@ z-index:100;
 
 }
 
-.logo{
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Espaço entre a imagem e o título */
+    color: var(--primary);
+}
 
-font-weight:bold;
+.logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
 
-color:var(--primary);
-
+.logo h2 {
+    font-size: 1.5rem;
+    margin: 0;
 }
 
 nav{
@@ -184,14 +194,25 @@ padding:3rem 1rem;
 
 }
 
-.course-grid{
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px; /* Impede que o grid se estique infinitamente em monitores grandes */
+    margin: 0 auto;    /* Centraliza o grid horizontalmente */
+}
 
-display:grid;
-
-grid-template-columns:1fr;
-
-gap:2rem;
-
+.course-card img {
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    height: 150px; /* Limita a largura máxima do logo para evitar que fique muito grande */
+    aspect-ratio: 16 / 10; /* Mantém a proporção padrão perfeita em qualquer largura */
+    object-fit: contain;   /* Preserva o logo inteiro sem cortar as bordas */
+    background-color: #ffffff; /* Fundo neutro para os logos em PNG/WebP */
+    border-radius: 10px;
+    padding: 0.5rem;       /* Espaçamento interno para o logo respirar */
+    margin: 0 auto 1rem auto;
 }
 
 .course-card {
@@ -557,4 +578,76 @@ footer {
         color .35s ease,
         border-color .35s ease;
 
+}
+
+.course-card .card-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: auto; /* Empurra o botão para o fundo do card, ideal para cards de altura variável */
+    padding-top: 1rem;
+}
+
+.btn-featured {
+    flex: 1; /* Faz o botão preencher o contêiner */
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    /* Use a cor secundária (laranja) para o botão de destaque, combinando com o hero */
+    background-color: var(--secondary);
+}
+
+.btn-featured:hover {
+    background-color: var(--primary); /* Muda para azul no hover para dar feedback visual */
+}
+
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  margin: auto;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+#close-modal {
+  position: center;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.hero-content {
+    width: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 500px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
 }

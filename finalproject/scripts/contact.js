@@ -1,4 +1,5 @@
 import "./menu.js";
+import "./theme.js";
 
 const form = document.querySelector(".contact-form");
 

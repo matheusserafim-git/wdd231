@@ -113,7 +113,7 @@
     "category": "JavaScript",
     "level": "Advanced",
     "duration": "14 Hours",
-    "image": "images/typescript.webp",
+    "image": "images/type.webp",
     "description": "Typed JavaScript."
   },
   {
@@ -131,7 +131,7 @@
     "category": "Database",
     "level": "Intermediate",
     "duration": "11 Hours",
-    "image": "images/mongodb.webp",
+    "image": "images/mongo.webp",
     "description": "NoSQL databases."
   }
 ]

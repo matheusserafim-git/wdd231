@@ -2,102 +2,63 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Courses | CodeHub Academy</title>
+    <meta name="description" content="Browse programming courses at CodeHub Academy.">
+    <meta name="author" content="Matheus Serafim">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/favico.ico">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/large.css">
 
-<title>Courses | CodeHub Academy</title>
-
-<meta name="description"
-content="Browse programming courses at CodeHub Academy.">
-
-<meta name="author"
-content="Matheus Serafim">
-
-<link rel="icon" href="images/favicon.ico">
-
-<link rel="stylesheet" href="styles/small.css">
-<link rel="stylesheet" href="styles/normalize.css">
-<link rel="stylesheet" href="styles/large.css">
-
-<script type="module"
-src="scripts/courses.js"
-defer></script>
-
+    <script type="module" src="scripts/courses.js" defer></script>
 </head>
 
 <body>
 
-<header>
+    <header>
+        <div class="logo">
+            <img src="images/logo.webp" alt="CodeHub Academy Logo" width="50" height="50">
+            <h2>CodeHub Academy</h2>
+        </div>
 
-<h2>CodeHub Academy</h2>
+        <div class="header-actions">
+            <button id="themeButton" aria-label="Toggle dark mode">🌙</button>
+            <button id="menuButton">☰</button>
+        </div>
 
-<div class="header-actions">
-    <button id="themeButton" aria-label="Toggle dark mode">
-        🌙
-    </button>
+        <nav id="navigation">
+            <a href="index.html">Home</a>
+            <a href="courses.html" class="active">Courses</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-    <button id="menuButton">
-        ☰
-    </button>
-</div>
+    <main>
+        <section class="hero">
+            <h1>Programming Courses</h1>
+            <p>Search and discover your next technology.</p>
+            <input type="search" id="searchInput" placeholder="Search course...">
+        </section>
 
-<nav id="navigation">
+        <section>
+            <div id="coursesContainer" class="course-grid"></div>
+        </section>
+    </main>
 
-<a href="index.html">Home</a>
+    <!-- O SEU MODAL JÁ ESTÁ AQUI -->
+    <dialog id="courseDialog" aria-labelledby="dialogTitle">
+        <div id="dialogContent"></div>
+        <button id="closeDialog">Close</button>
+    </dialog>
 
-<a href="courses.html" class="active">Courses</a>
-
-<a href="contact.html">Contact</a>
-
-</nav>
-
-</header>
-
-<main>
-
-<section class="hero">
-
-<h1>Programming Courses</h1>
-
-<p>Search and discover your next technology.</p>
-
-<input
-type="search"
-id="searchInput"
-placeholder="Search course...">
-
-</section>
-
-<section>
-
-<div id="coursesContainer"
-class="course-grid">
-
-</div>
-
-</section>
-
-</main>
-
-<dialog id="courseDialog" aria-labelledby="dialogTitle">
-
-<div id="dialogContent"></div>
-
-<button id="closeDialog">
-
-Close
-
-</button>
-
-</dialog>
-
-<footer>
-
-<p>©2026 CodeHub Academy</p>
-
-</footer>
+    <footer>
+        <p>©2026 CodeHub Academy</p>
+        <!-- Adicionado o link da apresentação em vídeo -->
+        <p><a href="LINK_DO_SEU_VIDEO_AQUI" target="_blank">Video Presentation</a></p>
+    </footer>
 
 </body>
-
 </html>
