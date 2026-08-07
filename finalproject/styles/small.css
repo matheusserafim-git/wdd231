@@ -293,14 +293,6 @@ nav a {
     border-radius: 10px;
 }
 
-footer {
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-}
-
 /* === MODAL / DIALOG (Limpo e Unificado) === */
 dialog {
     border: none;
@@ -430,16 +422,17 @@ footer {
         color .35s ease,
         border-color .35s ease;
 }
-/* Definição única do footer base (mobile) */
+
+/* === FOOTER (Única Definição Oficial) === */
 footer {
     background-color: var(--primary);
     color: var(--surface);
-    padding: 2rem 1.5rem; /* Use apenas um padding padrão aqui */
+    padding: 2rem 1.5rem;
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;   /* Alinhamento único */
+    text-align: center;
     gap: 1.5rem;
 }
 
