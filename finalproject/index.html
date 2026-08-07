@@ -1,138 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeHub Academy | Learn Programming</title>
+    
+    <meta name="description" content="Learn programming through interactive courses, learning paths and modern web technologies.">
+    <meta name="author" content="Matheus Serafim">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeHub Academy | Learn Programming</title>
-<meta name="description" content="Learn programming through interactive courses, learning paths and modern web technologies.">
-<meta name="author" content="Matheus Serafim">
+    <!-- Open Graph Meta Tags (Com URLs ABSOLUTAS conforme exigido pela auditoria) -->
+    <meta property="og:title" content="CodeHub Academy">
+    <meta property="og:description" content="Programming courses for beginner and intermediate developers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://matheusserafim-git.github.io/wdd231/images/logo.webp">
+    <meta property="og:url" content="https://matheusserafim-git.github.io/wdd231/index.html">
 
-<meta property="og:image" content="https://matheusserafim-git.github.io/wdd231/chamber/images/chambercanoaspng.png">
-<meta property="og:url" content="https://matheusserafim-git.github.io/wdd231/chamber/directory.html">
+    <!-- Favicon -->
+    <link rel="icon" href="images/favico.ico">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-<meta property="og:title" content="CodeHub Academy">
-<meta property="og:description" content="Programming courses for beginner and intermediate developers.">
-<meta property="og:image" content="images/logo.webp">
-<meta property="og:type" content="website">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
 
-<link rel="icon" href="images/favico.ico">
-
-<link rel="stylesheet" href="styles/small.css">
-<link rel="stylesheet" href="styles/normalize.css">
-<link rel="stylesheet" href="styles/large.css">
-
-<script type="module" src="scripts/main.js" defer></script>
-
+    <!-- JavaScript -->
+    <script type="module" src="scripts/main.js" defer></script>
 </head>
 
 <body>
-
-<header>
-
-<div class="logo">
-<img src="images/logo.webp" alt="CodeHub Academy Logo" width="50" height="50">
-<h2>CodeHub Academy</h2>
-</div>
-
-<div class="header-actions">
-    <button id="themeButton" aria-label="Toggle dark mode">
-        🌙
-    </button>
-
-    <button id="menuButton">
-        ☰
-    </button>
-</div>
-
-<nav id="navigation">
-
-<a href="index.html" class="active">Home</a>
-
-<a href="courses.html">Courses</a>
-
-<a href="contact.html">Contact</a>
-
-</nav>
-
-</header>
-
-<main>
-
-<section class="hero">
-        <div class="hero-content">
-            <h1>Learn Software Development</h1>
-            <p>Master HTML, CSS, JavaScript, Python and modern technologies.</p>
-
-            <div class="search-area">
-                <input type="search" id="search" placeholder="Search courses or technologies">
-                <button id="explore">Explore</button>
-            </div>
+    <header>
+        <div class="logo">
+            <img src="images/logo.webp" alt="CodeHub Academy Logo" width="50" height="50">
+            <h2>CodeHub Academy</h2>
         </div>
-    </section>
 
-<section class="featured">
+        <div class="header-actions">
+            <button id="themeButton" aria-label="Toggle dark mode">
+                🌙
+            </button>
+            <button id="menuButton" aria-label="Open menu">
+                ☰
+            </button>
+        </div>
 
-<h2>Featured Courses</h2>
+        <nav id="navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-<div class="course-grid" id="featuredCourses">
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Learn Software Development</h1>
+                <p>Master HTML, CSS, JavaScript, Python and modern technologies.</p>
 
-<!-- JavaScript -->
+                <div class="search-area">
+                    <input type="search" id="search" placeholder="Search courses or technologies">
+                    <button id="explore">Explore</button>
+                </div>
+            </div>
+        </section>
 
-</div>
+        <section class="featured">
+            <h2>Featured Courses</h2>
+            <div class="course-grid" id="featuredCourses">
+                <!-- JavaScript -->
+            </div>
+        </section>
 
-</section>
+        <section class="technologies">
+            <h2>Latest Technologies</h2>
+            <div class="tech-grid">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Node.js</span>
+                <span>Python</span>
+            </div>
+        </section>
 
-<section class="technologies">
+        <section class="cta">
+            <h2>Ready to Start?</h2>
+            <p>Join thousands of students learning programming.</p>
+            <a href="courses.html" class="button">View Courses</a>
+        </section>
+    </main>
 
-<h2>Latest Technologies</h2>
-
-<div class="tech-grid">
-
-<span>HTML</span>
-<span>CSS</span>
-<span>JavaScript</span>
-<span>React</span>
-<span>Node.js</span>
-<span>Python</span>
-
-</div>
-
-</section>
-
-<section class="cta">
-
-<h2>Ready to Start?</h2>
-
-<p>
-
-Join thousands of students learning programming.
-
-</p>
-
-<a href="courses.html" class="button">
-
-View Courses
-
-</a>
-
-</section>
-
-</main>
-
-<footer>
-
-<p>
-
-©2026 CodeHub Academy
-
-</p>
-
-</footer>
-
+    <footer>
+        <p>©2026 CodeHub Academy</p>
+    </footer>
 </body>
 </html>
