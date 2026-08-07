@@ -60,3 +60,26 @@ grid-template-columns:repeat(3,1fr);
     }
 
 }
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    text-align: left;
+    padding: 3rem 4rem;
+}
+
+.footer-info {
+    justify-self: start;
+}
+
+.footer-social {
+    justify-self: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-credits {
+    justify-self: end;
+    text-align: right;
+}
