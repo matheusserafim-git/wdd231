@@ -46,10 +46,8 @@ grid-template-columns:repeat(3,1fr);
 }
 
 .hero {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-        padding: 4rem 2rem;
+        min-height: 500px; /* Aumenta a altura da imagem de fundo no desktop */
+        padding: 5rem 2rem;
     }
 
     .hero-content, 

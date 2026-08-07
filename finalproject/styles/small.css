@@ -196,10 +196,11 @@ padding:3rem 1rem;
 
 .course-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    max-width: 1200px; /* Impede que o grid se estique infinitamente em monitores grandes */
-    margin: 0 auto;    /* Centraliza o grid horizontalmente */
+    max-width: 1200px;
+    margin: 3rem auto; /* Dá um espaço legal abaixo da barra de pesquisa */
+    padding: 0 1.5rem;/
 }
 
 .course-card img {
@@ -216,19 +217,18 @@ padding:3rem 1rem;
 }
 
 .course-card {
-    background: var(--surface);
-    padding: 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid var(--border);
+    background-color: var(--card-bg, #1e293b); /* Mantém o azul escuro que você escolheu */
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    align-items: center; /* Centraliza o conteúdo dentro do card */
+    text-align: center;
+    transition: transform 0.2s ease;
 }
 .course-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .course-card h3 {
@@ -628,16 +628,28 @@ dialog::backdrop {
 }
 
 .hero {
+    /* Define a imagem de fundo e uma camada escura (rgba) por cima para dar contraste */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../images/hero.webp');
+    background-size: cover;          /* Faz a imagem cobrir todo o espaço sem distorcer */
+    background-position: center top;     /* Mantém o centro da imagem sempre visível */
+    background-repeat: no-repeat;
+    
+    /* Layout para centralizar o texto por cima do fundo */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    padding: 2rem 1rem;
+    justify-content: center;
     text-align: center;
+    min-height: 400px;               /* Dá uma altura mínima agradável para o fundo aparecer */
+    padding: 3rem 1rem;
+    
+    /* Força a cor do texto para branco, garantindo a leitura no fundo escuro */
+    color: #ffffff;
 }
 
 .hero-content {
     width: 100%;
+    max-width: 700px; /* Limita a largura do conteúdo para melhor leitura */
 }
 
 .hero-image {
@@ -650,4 +662,27 @@ dialog::backdrop {
     height: auto;
     border-radius: 12px;
     object-fit: cover;
+}
+
+.hero h1, 
+.hero p {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+/* Cria a animação de surgimento suave */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplica a animação em todos os cards que aparecerem */
+.course-card {
+    animation: fadeUp 0.4s ease-out forwards;
 }
