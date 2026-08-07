@@ -98,6 +98,7 @@ nav a {
 
 /* === HERO SECTION (Limpo e Unificado) === */
 .hero {
+    background-color: var(--primary);
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../images/hero.webp');
     background-size: cover;          
     background-position: center top;     
